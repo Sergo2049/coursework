@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Serhii Vydysh
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="hostel_visitor_form_view">
+        <field name="model">hostel.visitor</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="first_name"/>
+                            <field name="last_name"/>
+                            <field name="phone"/>
+                            <field name="gender" widget="radio"
+                                   options="{'horizontal' : True}"/>
+                            <field name="passport_data"/>
+                        </group>
+                        <group>
+                            <field name="image_256" widget="image"
+                                   class="oe_avatar" nolabel="1"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hostel_visitor_search_view">
+        <field name="model">hostel.visitor</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- TODO -->
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hostel_visitor_tree_view">
+        <field name="model">hostel.visitor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- TODO -->
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="phone"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hostel_visitor_act_window">
+        <field name="name">Visitor</field> <!-- TODO -->
+        <field name="res_model">hostel.visitor</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="hostel_visitor_menu">
+        <field name="name">Visitor</field>
+        <field name="parent_id" ref="hostel_root_menu"/> <!-- TODO -->
+        <field name="action" ref="hostel_visitor_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Serhii Vydysh
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="hostel_booking_form_view">
+        <field name="model">hostel_booking</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <!-- TODO -->
+                    <group>
+                        <field name="start_date"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hostel_booking_search_view">
+        <field name="model">hostel_booking</field>
+        <field name="arch" type="xml">
+            <search>
+                <!-- TODO -->
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hostel_booking_tree_view">
+        <field name="model">hostel_booking</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- TODO -->
+                <field name="start_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hostel_booking_act_window">
+        <field name="name">Booking</field> <!-- TODO -->
+        <field name="res_model">hostel_booking</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="hostel_booking_menu">
+        <field name="name">Booking</field>
+        <field name="parent_id" ref="hostel_root_menu"/> <!-- TODO -->
+        <field name="action" ref="hostel_booking_act_window"/>
+        <field name="sequence" eval="16"/> <!-- TODO -->
+    </record>
+
+</odoo>
