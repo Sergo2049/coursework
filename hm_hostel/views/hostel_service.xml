@@ -14,9 +14,11 @@
                 <sheet>
                     <!-- TODO -->
                     <group>
-                        <field name="name"/>
-<!--                        <field name="currency_id"/>-->
-<!--                        <field name="price"/>-->
+                        <field name="date"/>
+                        <field name="booking_id"/>
+                        <field name="service_type_id"/>
+                        <field name="price"/>
+                        <field name="currency_id"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter"></div>
@@ -38,13 +40,18 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- TODO -->
-                <field name="name"/>
+                <field name="date"/>
+                <field name="booking_id"/>
+                <field name="display_name"/>
+                <field name="service_type_id"/>
+                <field name="price"/>
+                <field name="currency_id"/>
             </tree>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="hostel_service_act_window">
-        <field name="name">Hostel Service</field> <!-- TODO -->
+        <field name="name">Service</field> <!-- TODO -->
         <field name="res_model">hostel.service</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
@@ -52,8 +59,8 @@
     </record>
 
     <record model="ir.ui.menu" id="hostel_service_menu">
-        <field name="name">Hostel Service</field>
-        <field name="parent_id" ref="hostel_root_menu"/> <!-- TODO -->
+        <field name="name">Service</field>
+        <field name="parent_id" ref="hostel_root_menu"/>
         <field name="action" ref="hostel_service_act_window"/>
         <field name="sequence" eval="16"/> <!-- TODO -->
     </record>

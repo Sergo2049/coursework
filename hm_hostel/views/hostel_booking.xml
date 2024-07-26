@@ -5,7 +5,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="hostel_booking_form_view">
-        <field name="model">hostel_booking</field>
+        <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <form>
                 <header>
@@ -15,7 +15,23 @@
                     <!-- TODO -->
                     <group>
                         <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="state" widget="radio"
+                               options="{'horizontal' : True}"/>
+                        <field name="visitor_id"/>
+                        <field name="bed_id"/>
+
+
                     </group>
+                    <notebook>
+                        <page string="Services">
+                            <field name="service_ids"/>
+                        </page>
+<!--                        TODO:-->
+                        <page string="Payments">
+
+                        </page>
+                    </notebook>
                 </sheet>
                 <div class="oe_chatter"></div>
             </form>
@@ -23,7 +39,7 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_booking_search_view">
-        <field name="model">hostel_booking</field>
+        <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <search>
                 <!-- TODO -->
@@ -32,18 +48,22 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_booking_tree_view">
-        <field name="model">hostel_booking</field>
+        <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <tree>
                 <!-- TODO -->
                 <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="state"/>
+                <field name="visitor_id"/>
+                <field name="bed_id"/>
             </tree>
         </field>
     </record>
 
     <record model="ir.actions.act_window" id="hostel_booking_act_window">
         <field name="name">Booking</field> <!-- TODO -->
-        <field name="res_model">hostel_booking</field>
+        <field name="res_model">hostel.booking</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>

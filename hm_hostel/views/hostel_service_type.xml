@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Serhii Vydysh
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo>
+
+    <record model="ir.ui.view" id="hostel_service_type_form_view">
+        <field name="model">hostel.service.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <!-- TODO -->
+                </header>
+                <sheet>
+                    <!-- TODO -->
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+                <div class="oe_chatter"></div>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="hostel_service_type_tree_view">
+        <field name="model">hostel.service.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <!-- TODO -->
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="hostel_service_type_act_window">
+        <field name="name">Service Type</field> <!-- TODO -->
+        <field name="res_model">hostel.service.type</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
+
+    <record model="ir.ui.menu" id="hostel_service_type_menu">
+        <field name="name">Service Type</field>
+        <field name="parent_id" ref="hostel_root_menu"/>
+        <field name="action" ref="hostel_service_type_act_window"/>
+        <field name="sequence" eval="16"/>
+    </record>
+
+</odoo>

@@ -13,11 +13,14 @@ class HostelRoom(models.Model):
 
     active = fields.Boolean(default=True)
 
-    type = fields.Selection(selection=[('private', 'Private'),
-                             ('shared', 'Shared')],
+    type = fields.Selection([('shared', 'Shared'),
+                                       ('private', 'Private')
+                                       ],
                             default='shared',
                             required=True)
-    price = fields.Monetary(currency_field='currency_id')
+    price = fields.Monetary(currency_field='currency_id',
+                            help="""You can change currency in your company
+                                  settings.""")
     currency_id = fields.Many2one('res.currency',
                                   'Currency',
                                   readonly=True,

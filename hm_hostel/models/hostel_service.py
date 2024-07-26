@@ -5,9 +5,27 @@ from odoo import _, api, fields, models
 
 
 class HostelService(models.Model):
-
     _name = "hostel.service"
     _description = "Hostel Service"  # TODO
 
-    name = fields.Char()
-    # price = fields.Monetary(currency_field='company_currency')
+    date = fields.Datetime(required=True,
+                           default=fields.date.today())
+
+    service_type_id = fields.Many2one('hostel.service.type',
+                                   required=True)
+
+    booking_id = fields.Many2one('hostel.booking',
+                                 readonly=True)
+
+    price = fields.Monetary(currency_field='currency_id',
+                            help="""You can change currency in your company
+                                  settings.""")
+
+    # TODO: not working
+    currency_id = fields.Many2one(related='service_type_id.currency_id',
+                                  string='Currency', readonly=True)
+
+    @api.depends('service_type_id')
+    def _compute_display_name(self):
+        for rec in self:
+            rec.display_name = f"{rec.date.strftime('%Y-%m-%d')}- {rec.service_type_id.name}"
