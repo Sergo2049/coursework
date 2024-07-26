@@ -9,7 +9,9 @@ class HostelRoom(models.Model):
     _name = 'hostel.room'
     _description = 'Hostel Room'
 
-    name = fields.Char()
+    name = fields.Char(string='Room',
+                       required=True,
+                       help='Room number')
 
     active = fields.Boolean(default=True)
 

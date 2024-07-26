@@ -37,7 +37,7 @@
         <field name="arch" type="xml">
             <tree>
                 <!-- TODO -->
-                <field name="display_name" string="Name"/>
+                <field name="display_name" string="Bed"/>
                 <field name="room_id"/>
             </tree>
         </field>
