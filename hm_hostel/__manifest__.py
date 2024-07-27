@@ -21,11 +21,6 @@
         'views/hostel_room.xml',
     ],
     'demo': [
-        'demo/hostel_service_type.xml',
-        'demo/hostel_service.xml',
-        'demo/hostel_bed.xml',
-        'demo/hostel_booking.xml',
-        'demo/hostel_visitor.xml',
-        'demo/hostel_room.xml',
+        'demo/hostel_demo.xml',
     ],
 }

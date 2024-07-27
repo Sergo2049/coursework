@@ -9,7 +9,6 @@
                     <!-- TODO -->
                 </header>
                 <sheet>
-                    <!-- TODO -->
                     <group>
                         <field name="name"/>
                         <field name="type" widget="radio"
@@ -17,8 +16,14 @@
                         <field name="price"/>
                         <field name="currency_id"/>
                     </group>
+                        <field name="bed_ids" nolabel="1"
+                               widget="one2many_list">
+                            <tree string="Beds" editable="bottom">
+                                <field name="name"/>
+                                <field name="room_id"/>
+                            </tree>
+                        </field>
                 </sheet>
-                <div class="oe_chatter"></div>
             </form>
         </field>
     </record>
@@ -43,7 +48,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="hostel_room_act_window">
-        <field name="name">Room</field> <!-- TODO -->
+        <field name="name">Room</field>
         <field name="res_model">hostel.room</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
@@ -52,11 +57,10 @@
 
     <record model="ir.ui.menu" id="hostel_room_menu">
         <field name="name">Room</field>
-        <field name="parent_id" ref="hostel_root_menu"/> <!-- TODO -->
+        <field name="parent_id" ref="hostel_root_menu"/>
         <field name="action" ref="hostel_room_act_window"/>
-        <field name="sequence" eval="16"/> <!-- TODO -->
+        <field name="sequence" eval="30"/>
     </record>
-
 
 
 </odoo>

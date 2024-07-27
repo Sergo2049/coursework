@@ -54,7 +54,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="hostel_visitor_act_window">
-        <field name="name">Visitor</field> <!-- TODO -->
+        <field name="name">Visitor</field>
         <field name="res_model">hostel.visitor</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
@@ -63,9 +63,9 @@
 
     <record model="ir.ui.menu" id="hostel_visitor_menu">
         <field name="name">Visitor</field>
-        <field name="parent_id" ref="hostel_root_menu"/> <!-- TODO -->
+        <field name="parent_id" ref="hostel_root_menu"/>
         <field name="action" ref="hostel_visitor_act_window"/>
-        <field name="sequence" eval="16"/> <!-- TODO -->
+        <field name="sequence" eval="20"/>
     </record>
 
 </odoo>

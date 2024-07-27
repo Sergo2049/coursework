@@ -38,7 +38,7 @@ class Hostel_booking(models.Model):
 
     currency_id = fields.Many2one('res.currency', string='Currency')
 
-    # total_price =
+    total_bed_price = fields.Monetary(currency_field='currency_id')
 
     service_ids = fields.One2many('hostel.service',
                                   'booking_id')
@@ -74,13 +74,16 @@ class Hostel_booking(models.Model):
         """End booking date must be at least one day later the booking start
         date"""
         self.ensure_one()
-        if (self.end_date - self.start_date).days < 1:
-            raise ValidationError(_('Booking end date must be at least one day '
-                                    'later than booking start date.'))
+        if self.end_date and self.start_date:
+            if (self.end_date - self.start_date).days < 1:
+                raise ValidationError(
+                    _('Booking end date must be at least one day '
+                      'later than booking start date.'))
 
+#TODO: delete this action
     def action_test(self):
         print(self.roomroom_id.price)
-    # TODO cant change visit status if payment exist
+    #TODO cant change visit status if payment exist
     #TODO gender booking room constrains
     #TODO compute sum for booking
     #TODO check if room aviable this day

@@ -21,7 +21,6 @@ class HostelService(models.Model):
                             help="""You can change currency in your company
                                   settings.""")
 
-    # TODO: not working
     currency_id = fields.Many2one(related='service_type_id.currency_id',
                                   string='Currency', readonly=True)
 

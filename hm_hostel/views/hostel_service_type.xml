@@ -41,7 +41,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="hostel_service_type_act_window">
-        <field name="name">Service Type</field> <!-- TODO -->
+        <field name="name">Service Type</field>
         <field name="res_model">hostel.service.type</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
@@ -52,7 +52,7 @@
         <field name="name">Service Type</field>
         <field name="parent_id" ref="hostel_root_menu"/>
         <field name="action" ref="hostel_service_type_act_window"/>
-        <field name="sequence" eval="16"/>
+        <field name="sequence" eval="60"/>
     </record>
 
 </odoo>

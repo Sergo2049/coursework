@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2024 Sergii Vydysh
+     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
+
+<odoo noupdate="1">
+    <!-- Demo data for HostelVisitor -->
+    <record id="hostel_visitor_1" model="hostel.visitor">
+        <field name="first_name">John</field>
+        <field name="last_name">Doe</field>
+        <field name="phone">+1234567890</field>
+        <field name="passport_data">Passport data 1</field>
+        <field name="gender">male</field>
+    </record>
+    <record id="hostel_visitor_2" model="hostel.visitor">
+        <field name="first_name">Jane</field>
+        <field name="last_name">Smith</field>
+        <field name="phone">+0987654321</field>
+        <field name="passport_data">Passport data 2</field>
+        <field name="gender">female</field>
+    </record>
+    <record id="hostel_visitor_3" model="hostel.visitor">
+        <field name="first_name">Alice</field>
+        <field name="last_name">Johnson</field>
+        <field name="phone">+1122334455</field>
+        <field name="passport_data">Passport data 3</field>
+        <field name="gender">female</field>
+    </record>
+    <record id="hostel_visitor_4" model="hostel.visitor">
+        <field name="first_name">Bob</field>
+        <field name="last_name">Williams</field>
+        <field name="phone">+2233445566</field>
+        <field name="passport_data">Passport data 4</field>
+        <field name="gender">male</field>
+    </record>
+    <record id="hostel_visitor_5" model="hostel.visitor">
+        <field name="first_name">Charlie</field>
+        <field name="last_name">Brown</field>
+        <field name="phone">+3344556677</field>
+        <field name="passport_data">Passport data 5</field>
+        <field name="gender">male</field>
+    </record>
+    <record id="hostel_visitor_6" model="hostel.visitor">
+        <field name="first_name">David</field>
+        <field name="last_name">Taylor</field>
+        <field name="phone">+4455667788</field>
+        <field name="passport_data">Passport data 6</field>
+        <field name="gender">male</field>
+    </record>
+    <record id="hostel_visitor_7" model="hostel.visitor">
+        <field name="first_name">Eva</field>
+        <field name="last_name">Anderson</field>
+        <field name="phone">+5566778899</field>
+        <field name="passport_data">Passport data 7</field>
+        <field name="gender">female</field>
+    </record>
+    <record id="hostel_visitor_8" model="hostel.visitor">
+        <field name="first_name">Frank</field>
+        <field name="last_name">Martinez</field>
+        <field name="phone">+6677889900</field>
+        <field name="passport_data">Passport data 8</field>
+        <field name="gender">male</field>
+    </record>
+    <record id="hostel_visitor_9" model="hostel.visitor">
+        <field name="first_name">Grace</field>
+        <field name="last_name">Lee</field>
+        <field name="phone">+7788990011</field>
+        <field name="passport_data">Passport data 9</field>
+        <field name="gender">female</field>
+    </record>
+    <record id="hostel_visitor_10" model="hostel.visitor">
+        <field name="first_name">Henry</field>
+        <field name="last_name">Walker</field>
+        <field name="phone">+8899001122</field>
+        <field name="passport_data">Passport data 10</field>
+        <field name="gender">male</field>
+    </record>
+
+    <!-- Demo data for HostelRoom -->
+    <record id="hostel_room_1" model="hostel.room">
+        <field name="name">Room 101</field>
+        <field name="type">private</field>
+        <field name="price">100.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_2" model="hostel.room">
+        <field name="name">Room 102</field>
+        <field name="type">shared</field>
+        <field name="price">50.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_3" model="hostel.room">
+        <field name="name">Room 103</field>
+        <field name="type">private</field>
+        <field name="price">120.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_4" model="hostel.room">
+        <field name="name">Room 104</field>
+        <field name="type">shared</field>
+        <field name="price">60.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_5" model="hostel.room">
+        <field name="name">Room 105</field>
+        <field name="type">private</field>
+        <field name="price">110.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_6" model="hostel.room">
+        <field name="name">Room 106</field>
+        <field name="type">shared</field>
+        <field name="price">55.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_7" model="hostel.room">
+        <field name="name">Room 107</field>
+        <field name="type">private</field>
+        <field name="price">130.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_8" model="hostel.room">
+        <field name="name">Room 108</field>
+        <field name="type">shared</field>
+        <field name="price">70.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_9" model="hostel.room">
+        <field name="name">Room 109</field>
+        <field name="type">private</field>
+        <field name="price">140.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_room_10" model="hostel.room">
+        <field name="name">Room 110</field>
+        <field name="type">shared</field>
+        <field name="price">80.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+
+    <!-- Demo data for HostelBed -->
+    <record id="hostel_bed_1" model="hostel.bed">
+        <field name="name">Bed 1</field>
+        <field name="room_id" ref="hostel_room_1"/>
+    </record>
+    <record id="hostel_bed_2" model="hostel.bed">
+        <field name="name">Bed 2</field>
+        <field name="room_id" ref="hostel_room_2"/>
+    </record>
+    <record id="hostel_bed_3" model="hostel.bed">
+        <field name="name">Bed 3</field>
+        <field name="room_id" ref="hostel_room_3"/>
+    </record>
+    <record id="hostel_bed_4" model="hostel.bed">
+        <field name="name">Bed 4</field>
+        <field name="room_id" ref="hostel_room_4"/>
+    </record>
+    <record id="hostel_bed_5" model="hostel.bed">
+        <field name="name">Bed 5</field>
+        <field name="room_id" ref="hostel_room_5"/>
+    </record>
+    <record id="hostel_bed_6" model="hostel.bed">
+        <field name="name">Bed 6</field>
+        <field name="room_id" ref="hostel_room_6"/>
+    </record>
+    <record id="hostel_bed_7" model="hostel.bed">
+        <field name="name">Bed 7</field>
+        <field name="room_id" ref="hostel_room_7"/>
+    </record>
+    <record id="hostel_bed_8" model="hostel.bed">
+        <field name="name">Bed 8</field>
+        <field name="room_id" ref="hostel_room_8"/>
+    </record>
+    <record id="hostel_bed_9" model="hostel.bed">
+        <field name="name">Bed 9</field>
+        <field name="room_id" ref="hostel_room_9"/>
+    </record>
+    <record id="hostel_bed_10" model="hostel.bed">
+        <field name="name">Bed 10</field>
+        <field name="room_id" ref="hostel_room_10"/>
+    </record>
+
+    <!-- Demo data for HostelServiceType -->
+    <record id="hostel_service_type_1" model="hostel.service.type">
+        <field name="name">Laundry</field>
+        <field name="state">available</field>
+        <field name="price">10.00</field>
+    </record>
+    <record id="hostel_service_type_2" model="hostel.service.type">
+        <field name="name">Breakfast</field>
+        <field name="state">available</field>
+        <field name="price">15.00</field>
+    </record>
+    <record id="hostel_service_type_3" model="hostel.service.type">
+        <field name="name">Tour</field>
+        <field name="state">available</field>
+        <field name="price">20.00</field>
+    </record>
+    <record id="hostel_service_type_4" model="hostel.service.type">
+        <field name="name">Gym</field>
+        <field name="state">available</field>
+        <field name="price">5.00</field>
+    </record>
+    <record id="hostel_service_type_5" model="hostel.service.type">
+        <field name="name">Spa</field>
+        <field name="state">available</field>
+        <field name="price">25.00</field>
+    </record>
+    <record id="hostel_service_type_6" model="hostel.service.type">
+        <field name="name">Massage</field>
+        <field name="state">available</field>
+        <field name="price">30.00</field>
+    </record>
+    <record id="hostel_service_type_7" model="hostel.service.type">
+        <field name="name">Swimming Pool</field>
+        <field name="state">notavailable</field>
+        <field name="price">8.00</field>
+    </record>
+    <record id="hostel_service_type_8" model="hostel.service.type">
+        <field name="name">Sauna</field>
+        <field name="state">available</field>
+        <field name="price">18.00</field>
+    </record>
+    <record id="hostel_service_type_9" model="hostel.service.type">
+        <field name="name">Parking</field>
+        <field name="state">available</field>
+        <field name="price">12.00</field>
+    </record>
+    <record id="hostel_service_type_10" model="hostel.service.type">
+        <field name="name">Yoga Class</field>
+        <field name="state">available</field>
+        <field name="price">22.00</field>
+    </record>
+
+    <!-- Demo data for HostelBooking -->
+    <record id="hostel_booking_1" model="hostel.booking">
+        <field name="start_date">2024-07-20</field>
+        <field name="end_date">2024-07-22</field>
+        <field name="state">planned</field>
+        <field name="visitor_id" ref="hostel_visitor_1"/>
+        <field name="bed_id" ref="hostel_bed_1"/>
+        <field name="room_price">100.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_2" model="hostel.booking">
+        <field name="start_date">2024-07-21</field>
+        <field name="end_date">2024-07-23</field>
+        <field name="state">confirmed</field>
+        <field name="visitor_id" ref="hostel_visitor_2"/>
+        <field name="bed_id" ref="hostel_bed_2"/>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_3" model="hostel.booking">
+        <field name="start_date">2024-07-22</field>
+        <field name="end_date">2024-07-24</field>
+        <field name="state">canceled</field>
+        <field name="visitor_id" ref="hostel_visitor_3"/>
+        <field name="bed_id" ref="hostel_bed_3"/>
+        <field name="room_price">120.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_4" model="hostel.booking">
+        <field name="start_date">2024-07-23</field>
+        <field name="end_date">2024-07-25</field>
+        <field name="state">planned</field>
+        <field name="visitor_id" ref="hostel_visitor_4"/>
+        <field name="bed_id" ref="hostel_bed_4"/>
+        <field name="room_price">60.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_5" model="hostel.booking">
+        <field name="start_date">2024-07-24</field>
+        <field name="end_date">2024-07-26</field>
+        <field name="state">confirmed</field>
+        <field name="visitor_id" ref="hostel_visitor_5"/>
+        <field name="bed_id" ref="hostel_bed_5"/>
+        <field name="room_price">110.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_6" model="hostel.booking">
+        <field name="start_date">2024-07-25</field>
+        <field name="end_date">2024-07-27</field>
+        <field name="state">canceled</field>
+        <field name="visitor_id" ref="hostel_visitor_6"/>
+        <field name="bed_id" ref="hostel_bed_6"/>
+        <field name="room_price">55.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_7" model="hostel.booking">
+        <field name="start_date">2024-07-26</field>
+        <field name="end_date">2024-07-28</field>
+        <field name="state">planned</field>
+        <field name="visitor_id" ref="hostel_visitor_7"/>
+        <field name="bed_id" ref="hostel_bed_7"/>
+        <field name="room_price">130.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_8" model="hostel.booking">
+        <field name="start_date">2024-07-27</field>
+        <field name="end_date">2024-07-29</field>
+        <field name="state">confirmed</field>
+        <field name="visitor_id" ref="hostel_visitor_8"/>
+        <field name="bed_id" ref="hostel_bed_8"/>
+        <field name="room_price">70.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_9" model="hostel.booking">
+        <field name="start_date">2024-07-28</field>
+        <field name="end_date">2024-07-30</field>
+        <field name="state">canceled</field>
+        <field name="visitor_id" ref="hostel_visitor_9"/>
+        <field name="bed_id" ref="hostel_bed_9"/>
+        <field name="room_price">140.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_booking_10" model="hostel.booking">
+        <field name="start_date">2024-07-29</field>
+        <field name="end_date">2024-07-31</field>
+        <field name="state">planned</field>
+        <field name="visitor_id" ref="hostel_visitor_10"/>
+        <field name="bed_id" ref="hostel_bed_10"/>
+        <field name="room_price">80.00</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+</odoo>
+
