@@ -26,6 +26,9 @@
                                    class="oe_avatar" nolabel="1"/>
                         </group>
                     </group>
+                    <group string="Booking History" expand="1">
+                        <field name="booking_ids"/>
+                    </group>
                 </sheet>
                 <div class="oe_chatter"></div>
             </form>
@@ -37,6 +40,7 @@
         <field name="arch" type="xml">
             <search>
                 <field name="display_name" operator="ilike"/>
+                <field name="phone" operator="like"/>
             </search>
         </field>
     </record>
@@ -49,6 +53,7 @@
                 <field name="first_name"/>
                 <field name="last_name"/>
                 <field name="phone"/>
+                <field name="gender"/>
             </tree>
         </field>
     </record>

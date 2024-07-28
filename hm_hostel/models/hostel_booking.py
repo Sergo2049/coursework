@@ -22,7 +22,6 @@ class Hostel_booking(models.Model):
     booking_days = fields.Integer(compute='_compute_booking_days',
                                   string='Days')
 
-
     state = fields.Selection([('planned', 'Planned'),
                               ('confirmed', 'Confirmed'),
                               ('canceled', 'Canceled')],

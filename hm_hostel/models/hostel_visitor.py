@@ -31,6 +31,10 @@ class HostelVisitor(models.Model):
     image_256 = fields.Image('image_256',
                              max_width=256, max_height=256)
 
+    booking_ids = fields.One2many('hostel.booking',
+                                  'visitor_id',
+                                  readonly=True)
+
     @api.depends('first_name', 'last_name')
     def _compute_display_name(self):
         for rec in self:

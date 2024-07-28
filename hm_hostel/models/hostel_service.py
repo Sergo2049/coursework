@@ -12,7 +12,8 @@ class HostelService(models.Model):
                            default=fields.date.today())
 
     service_type_id = fields.Many2one('hostel.service.type',
-                                   required=True)
+                                      domain="[('is_available', '=', True)]",
+                                      required=True)
 
     booking_id = fields.Many2one('hostel.booking',
                                  readonly=True)

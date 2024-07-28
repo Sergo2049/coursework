@@ -13,7 +13,7 @@
                     <field name="bed_id"/>
                 </group>
                 <footer>
-                    <button name="get_available_beds"
+                    <button name="action_create_booking"
                             string="Create booking"
                             type="object"
                             class="btn-secondary"/>

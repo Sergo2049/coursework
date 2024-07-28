@@ -4,14 +4,19 @@
 from odoo import _, api, fields, models
 
 
-class HostelServiceType(models.Model):
+class HostelPayment(models.Model):
 
-    _name = "hostel.service.type"
-    _description = "Hostel Service Type"  # TODO
+    _name = "hostel.payment"
+    _description = "Hostel Payment"  # TODO
 
-    name = fields.Char(required=True)
-    is_available = fields.Boolean()
-    price = fields.Monetary(currency_field='currency_id',
+    payment_date = fields.Date(required=True,
+                               default=fields.Date.today())
+    type = fields.Selection(selection=[('cash', 'Cash'),
+                                       ('credit_card', 'Credit card')],
+                            default='credit_card')
+    booking_id = fields.Many2one('hostel.booking',
+                                 required=True)
+    amount = fields.Monetary(currency_field='currency_id',
                             required=True,
                             help="""You can change currency in your company
                                   settings.""")

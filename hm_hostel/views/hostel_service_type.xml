@@ -15,8 +15,7 @@
                     <!-- TODO -->
                     <group>
                         <field name="name"/>
-                        <field name="state" widget="radio"
-                                   options="{'horizontal' : True}"/>
+                        <field name="is_available"/>
                         <field name="price"/>
                         <field name="currency_id"/>
                     </group>
@@ -33,7 +32,7 @@
             <tree>
                 <!-- TODO -->
                 <field name="name"/>
-                <field name="state"/>
+                <field name="is_available"/>
                 <field name="price"/>
                 <field name="currency_id"/>
             </tree>
