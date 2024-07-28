@@ -48,7 +48,7 @@
     </record>
 
     <record model="ir.actions.act_window" id="hostel_payment_act_window">
-        <field name="name">Hostel Payment</field>
+        <field name="name">Payment</field>
         <field name="res_model">hostel.payment</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
@@ -56,7 +56,7 @@
     </record>
 
     <record model="ir.ui.menu" id="hostel_payment_menu">
-        <field name="name">Hostel Payment</field>
+        <field name="name">Payment</field>
         <field name="parent_id" ref="hostel_root_menu"/>
         <field name="action" ref="hostel_payment_act_window"/>
         <field name="sequence" eval="60"/>

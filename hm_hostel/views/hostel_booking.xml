@@ -13,7 +13,6 @@
                            options="{'clickable': '1'}"/>
                 </header>
                 <sheet>
-                    <!-- TODO -->
                     <group>
                         <field name="start_date"/>
                         <field name="end_date"/>
@@ -29,9 +28,8 @@
                         <page string="Services">
                             <field name="service_ids"/>
                         </page>
-                        <!--                        TODO:-->
                         <page string="Payments">
-
+                            <field name="payment_ids"/>
                         </page>
                     </notebook>
                 </sheet>

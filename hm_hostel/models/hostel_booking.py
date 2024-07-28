@@ -51,6 +51,8 @@ class Hostel_booking(models.Model):
 
     service_ids = fields.One2many('hostel.service',
                                   'booking_id')
+    payment_ids = fields.One2many('hostel.payment',
+                                 inverse_name='booking_id')
 
     @api.depends('room_id')
     def _compute_room_price(self):
