@@ -17,7 +17,10 @@ class HostelService(models.Model):
     booking_id = fields.Many2one('hostel.booking',
                                  readonly=True)
 
-    price = fields.Monetary(currency_field='currency_id',
+    price = fields.Monetary(related="service_type_id.price",
+                            currency_field='currency_id',
+                            readonly=True,
+                            store=True,
                             help="""You can change currency in your company
                                   settings.""")
 

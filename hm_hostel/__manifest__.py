@@ -19,6 +19,7 @@
         'views/hostel_booking.xml',
         'views/hostel_visitor.xml',
         'views/hostel_room.xml',
+        'wizard/create_booking_wizard_view.xml',
     ],
     'demo': [
         'demo/hostel_demo.xml',

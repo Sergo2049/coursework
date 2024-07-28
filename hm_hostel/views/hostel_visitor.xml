@@ -36,7 +36,7 @@
         <field name="model">hostel.visitor</field>
         <field name="arch" type="xml">
             <search>
-                <!-- TODO -->
+                <field name="display_name" operator="ilike"/>
             </search>
         </field>
     </record>

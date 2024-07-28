@@ -5,3 +5,4 @@ hm_hostel.access_hostel_booking,access_hostel_booking,hm_hostel.model_hostel_boo
 hm_hostel.access_hostel_bed,access_hostel_bed,hm_hostel.model_hostel_bed,base.group_user,1,1,1,1
 hm_hostel.access_hostel_service,access_hostel_service,hm_hostel.model_hostel_service,base.group_user,1,1,1,1
 hm_hostel.access_hostel_service_type,access_hostel_service_type,hm_hostel.model_hostel_service_type,base.group_user,1,1,1,1
+hm_hostel.access_create_booking_wizard,access_create_booking_wizard,hm_hostel.model_create_booking_wizard,base.group_user,1,1,1,1

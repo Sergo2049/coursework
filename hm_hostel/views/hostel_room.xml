@@ -20,6 +20,7 @@
                                widget="one2many_list">
                             <tree string="Beds" editable="bottom">
                                 <field name="name"/>
+<!--                                <field name="room_id"/>-->
                                 <field name="room_id"/>
                             </tree>
                         </field>
@@ -47,10 +48,67 @@
         </field>
     </record>
 
+<record model="ir.ui.view" id="hostel_room_kanban_view">
+        <field name="model">hostel.room</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" group_edit="False"
+                    create="False" delete="False" records_draggable="False">
+                <header>
+
+                </header>
+<!--                <field name="state"/>-->
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <!-- TODO -->
+
+                                <div class="o_kanban_record_title">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+<!--                                    <div class="o_kanban_record_body">-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <field name="state"/>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <strong>Dates: </strong>-->
+<!--                                        <field name="start_date"/> - -->
+<!--                                        <field name="end_date"/>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <strong>Days: </strong>-->
+<!--                                        <field name="booking_days"/>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <strong>Visitor: </strong>-->
+<!--                                        <field name="visitor_id"/>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <strong>Room: </strong>-->
+<!--                                        <field name="room_id"/>-->
+<!--                                    </div>-->
+<!--                                    <div>-->
+<!--                                        <strong>Bed: </strong>-->
+<!--                                        <field name="bed_id"/>-->
+<!--                                    </div>-->
+                                </div>
+                                <div class="o_kanban_record_bottom">
+                                    <button name="action_book" string="Book"
+                                             class="btn-primary" type="object"/>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
     <record model="ir.actions.act_window" id="hostel_room_act_window">
         <field name="name">Room</field>
         <field name="res_model">hostel.room</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>

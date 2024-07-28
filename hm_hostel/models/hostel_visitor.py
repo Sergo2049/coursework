@@ -14,6 +14,9 @@ class HostelVisitor(models.Model):
 
     last_name = fields.Char(required=True)
 
+    display_name = fields.Char(compute='_compute_display_name', store=True,
+                               index=True)
+
     phone = fields.Char(required=True,
                         index=True)
 

@@ -78,7 +78,7 @@
     <!-- Demo data for HostelRoom -->
     <record id="hostel_room_1" model="hostel.room">
         <field name="name">Room 101</field>
-        <field name="type">private</field>
+        <field name="type">shared</field>
         <field name="price">100.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -90,13 +90,13 @@
     </record>
     <record id="hostel_room_3" model="hostel.room">
         <field name="name">Room 103</field>
-        <field name="type">private</field>
+        <field name="type">shared</field>
         <field name="price">120.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_room_4" model="hostel.room">
         <field name="name">Room 104</field>
-        <field name="type">shared</field>
+        <field name="type">private</field>
         <field name="price">60.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -138,47 +138,70 @@
     </record>
 
     <!-- Demo data for HostelBed -->
+<!--    Shared room 1-->
     <record id="hostel_bed_1" model="hostel.bed">
         <field name="name">Bed 1</field>
         <field name="room_id" ref="hostel_room_1"/>
     </record>
     <record id="hostel_bed_2" model="hostel.bed">
         <field name="name">Bed 2</field>
-        <field name="room_id" ref="hostel_room_2"/>
+        <field name="room_id" ref="hostel_room_1"/>
     </record>
     <record id="hostel_bed_3" model="hostel.bed">
         <field name="name">Bed 3</field>
-        <field name="room_id" ref="hostel_room_3"/>
+        <field name="room_id" ref="hostel_room_1"/>
     </record>
     <record id="hostel_bed_4" model="hostel.bed">
         <field name="name">Bed 4</field>
-        <field name="room_id" ref="hostel_room_4"/>
+        <field name="room_id" ref="hostel_room_1"/>
     </record>
     <record id="hostel_bed_5" model="hostel.bed">
         <field name="name">Bed 5</field>
-        <field name="room_id" ref="hostel_room_5"/>
+        <field name="room_id" ref="hostel_room_1"/>
     </record>
     <record id="hostel_bed_6" model="hostel.bed">
         <field name="name">Bed 6</field>
-        <field name="room_id" ref="hostel_room_6"/>
+        <field name="room_id" ref="hostel_room_1"/>
     </record>
+<!--    Shared room 2-->
     <record id="hostel_bed_7" model="hostel.bed">
-        <field name="name">Bed 7</field>
-        <field name="room_id" ref="hostel_room_7"/>
+        <field name="name">Bed 1</field>
+        <field name="room_id" ref="hostel_room_2"/>
     </record>
     <record id="hostel_bed_8" model="hostel.bed">
-        <field name="name">Bed 8</field>
-        <field name="room_id" ref="hostel_room_8"/>
+        <field name="name">Bed 2</field>
+        <field name="room_id" ref="hostel_room_2"/>
     </record>
     <record id="hostel_bed_9" model="hostel.bed">
-        <field name="name">Bed 9</field>
-        <field name="room_id" ref="hostel_room_9"/>
+        <field name="name">Bed 3</field>
+        <field name="room_id" ref="hostel_room_2"/>
     </record>
     <record id="hostel_bed_10" model="hostel.bed">
-        <field name="name">Bed 10</field>
-        <field name="room_id" ref="hostel_room_10"/>
+        <field name="name">Bed 4</field>
+        <field name="room_id" ref="hostel_room_2"/>
     </record>
-
+    <!--Shared room 3-->
+    <record id="hostel_bed_11" model="hostel.bed">
+        <field name="name">Bed 1</field>
+        <field name="room_id" ref="hostel_room_3"/>
+    </record>
+    <record id="hostel_bed_12" model="hostel.bed">
+        <field name="name">Bed 2</field>
+        <field name="room_id" ref="hostel_room_3"/>
+    </record>
+    <record id="hostel_bed_13" model="hostel.bed">
+        <field name="name">Bed 3</field>
+        <field name="room_id" ref="hostel_room_3"/>
+    </record>
+    <record id="hostel_bed_14" model="hostel.bed">
+        <field name="name">Bed 4</field>
+        <field name="room_id" ref="hostel_room_3"/>
+    </record>
+    <!--    Private room 4-->
+    <record id="hostel_bed_15" model="hostel.bed">
+        <field name="name">Bed 1</field>
+        <field name="room_id" ref="hostel_room_4"/>
+    </record>
     <!-- Demo data for HostelServiceType -->
     <record id="hostel_service_type_1" model="hostel.service.type">
         <field name="name">Laundry</field>
@@ -238,7 +261,6 @@
         <field name="state">planned</field>
         <field name="visitor_id" ref="hostel_visitor_1"/>
         <field name="bed_id" ref="hostel_bed_1"/>
-        <field name="room_price">100.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_2" model="hostel.booking">
@@ -255,7 +277,6 @@
         <field name="state">canceled</field>
         <field name="visitor_id" ref="hostel_visitor_3"/>
         <field name="bed_id" ref="hostel_bed_3"/>
-        <field name="room_price">120.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_4" model="hostel.booking">
@@ -264,7 +285,6 @@
         <field name="state">planned</field>
         <field name="visitor_id" ref="hostel_visitor_4"/>
         <field name="bed_id" ref="hostel_bed_4"/>
-        <field name="room_price">60.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_5" model="hostel.booking">
@@ -273,7 +293,6 @@
         <field name="state">confirmed</field>
         <field name="visitor_id" ref="hostel_visitor_5"/>
         <field name="bed_id" ref="hostel_bed_5"/>
-        <field name="room_price">110.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_6" model="hostel.booking">
@@ -282,7 +301,6 @@
         <field name="state">canceled</field>
         <field name="visitor_id" ref="hostel_visitor_6"/>
         <field name="bed_id" ref="hostel_bed_6"/>
-        <field name="room_price">55.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_7" model="hostel.booking">
@@ -291,7 +309,6 @@
         <field name="state">planned</field>
         <field name="visitor_id" ref="hostel_visitor_7"/>
         <field name="bed_id" ref="hostel_bed_7"/>
-        <field name="room_price">130.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_8" model="hostel.booking">
@@ -300,7 +317,6 @@
         <field name="state">confirmed</field>
         <field name="visitor_id" ref="hostel_visitor_8"/>
         <field name="bed_id" ref="hostel_bed_8"/>
-        <field name="room_price">70.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_9" model="hostel.booking">
@@ -309,7 +325,6 @@
         <field name="state">canceled</field>
         <field name="visitor_id" ref="hostel_visitor_9"/>
         <field name="bed_id" ref="hostel_bed_9"/>
-        <field name="room_price">140.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_booking_10" model="hostel.booking">
@@ -318,7 +333,6 @@
         <field name="state">planned</field>
         <field name="visitor_id" ref="hostel_visitor_10"/>
         <field name="bed_id" ref="hostel_bed_10"/>
-        <field name="room_price">80.00</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
 </odoo>

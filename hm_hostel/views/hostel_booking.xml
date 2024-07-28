@@ -9,8 +9,6 @@
         <field name="arch" type="xml">
             <form>
                 <header>
-                    <button type="object" string="Test"
-                            class="btn-primary" name="action_test"/>
                     <field name="state" widget="statusbar"
                            options="{'clickable': '1'}"/>
                 </header>
@@ -31,7 +29,7 @@
                         <page string="Services">
                             <field name="service_ids"/>
                         </page>
-<!--                        TODO:-->
+                        <!--                        TODO:-->
                         <page string="Payments">
 
                         </page>
@@ -46,7 +44,14 @@
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <search>
-                <!-- TODO -->
+                <field name="room_id" operator="ilike"/>
+                <filter name="start_date" date="start_date"/>
+                <filter name="filter_not_canceled" string="Not canceled" domain="[('state', '!=', 'canceled')]"/>
+                <searchpanel>
+                    <field name="state" icon="fa-ellipsis-v"/>
+                    <field name="room_id" icon="fa-bed"/>
+                    <field name="visitor_id" icon="fa-user"/>
+                </searchpanel>
             </search>
         </field>
     </record>
@@ -55,9 +60,15 @@
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <tree>
-                <!-- TODO -->
-                <field name="start_date"/>
+            <header>
+                <button type="action" string="Book a bed"
+                        class="btn-primary"
+                        name="%(action_create_booking_wizard)d"
+                        display="always"/>
+            </header>
+                <field name="display_name"/>
                 <field name="booking_days"/>
+                <field name="display_name"/>
                 <field name="visitor_id"/>
                 <field name="room_id"/>
                 <field name="bed_id"/>
@@ -65,10 +76,82 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="hostel_booking_calendar_view">
+        <field name="model">hostel.booking</field>
+        <field name="arch" type="xml">
+            <calendar date_start="start_date" date_stop="end_date"
+                      color="bed_id" scales="month"
+                      create="False" delete="False">
+                <!-- TODO -->
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="booking_days"/>
+                <field name="visitor_id"/>
+                <field name="room_id"/>
+                <field name="bed_id"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hostel_booking_kanban_view">
+        <field name="model">hostel.booking</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_mobile" group_edit="False" default_group_by="state"
+                    create="False" delete="False" records_draggable="False">
+                <field name="state"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <!-- TODO -->
+
+                                <div class="o_kanban_record_title">
+                                    <strong>
+                                        <field name="display_name"/>
+                                    </strong>
+                                    <div class="o_kanban_record_body">
+                                    </div>
+                                    <div>
+                                        <field name="state"/>
+                                    </div>
+                                    <div>
+                                        <strong>Dates: </strong>
+                                        <field name="start_date"/> -
+                                        <field name="end_date"/>
+                                    </div>
+                                    <div>
+                                        <strong>Days: </strong>
+                                        <field name="booking_days"/>
+                                    </div>
+                                    <div>
+                                        <strong>Visitor: </strong>
+                                        <field name="visitor_id"/>
+                                    </div>
+                                    <div>
+                                        <strong>Room: </strong>
+                                        <field name="room_id"/>
+                                    </div>
+                                    <div>
+                                        <strong>Bed: </strong>
+                                        <field name="bed_id"/>
+                                    </div>
+                                    <progressbar field="state" colors='{"confirmed": "success", "planned": "warning", "canceled": "danger"}'/>
+                                </div>
+                                <div class="o_kanban_record_bottom">
+
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="hostel_booking_act_window">
         <field name="name">Booking</field>
         <field name="res_model">hostel.booking</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban,calendar</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>

@@ -17,7 +17,7 @@ class HostelBed(models.Model):
     room_id = fields.Many2one(comodel_name='hostel.room',
                               required=True)
 
-    @api.depends()
+    @api.depends('room_id')
     def _compute_display_name(self):
         for rec in self:
             rec.display_name = f'{rec.room_id.name}-{rec.name}'
