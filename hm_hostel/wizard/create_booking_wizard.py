@@ -25,7 +25,7 @@ class CreateBookingWizard(models.TransientModel):
     @api.onchange('planned_start_date', 'planned_end_date')
     def _onchange_dates(self):
         if self.planned_start_date and self.planned_end_date:
-            available_beds = self.get_available_beds()
+            available_beds = self.get_booked_beds()
             return {'domain': {'bed_id': [('id', '!in', available_beds)]}}
 
     def get_booked_beds(self):

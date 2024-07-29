@@ -9,9 +9,6 @@ class HostelPayment(models.Model):
     _name = "hostel.payment"
     _description = "Hostel Payment"  # TODO
 
-    payment_date = fields.Datetime(required=True,
-                               default=fields.Date.today())
-
     type = fields.Selection(selection=[('cash', 'Cash'),
                                        ('credit_card', 'Credit card')],
                             default='credit_card')

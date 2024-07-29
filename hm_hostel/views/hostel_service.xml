@@ -8,17 +8,14 @@
         <field name="model">hostel.service</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <!-- TODO -->
-                </header>
                 <sheet>
-                    <!-- TODO -->
                     <group>
-                        <field name="date"/>
                         <field name="booking_id"/>
                         <field name="service_type_id"/>
                         <field name="price"/>
                         <field name="currency_id"/>
+                        <field name="quantity"/>
+                        <field name="total_amount"/>
                     </group>
                 </sheet>
                 <div class="oe_chatter"></div>
@@ -39,13 +36,14 @@
         <field name="model">hostel.service</field>
         <field name="arch" type="xml">
             <tree>
-                <!-- TODO -->
-                <field name="date"/>
+                <field name="create_date" string="Date"/>
                 <field name="booking_id"/>
-                <field name="display_name"/>
+                <field name="display_name" string="Service"/>
                 <field name="service_type_id"/>
                 <field name="price"/>
                 <field name="currency_id"/>
+                <field name="quantity"/>
+                <field name="total_amount"/>
             </tree>
         </field>
     </record>

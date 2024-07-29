@@ -18,18 +18,42 @@
                         <field name="end_date"/>
                         <field name="booking_days"/>
                         <field name="room_price"/>
-                        <field name="total_bed_price"/>
+                        <field name="total_bed_amount"/>
                         <field name="currency_id"/>
                         <field name="visitor_id"/>
                         <field name="room_id"/>
                         <field name="bed_id"/>
+                        <field name="total_amount"/>
                     </group>
                     <notebook>
                         <page string="Services">
-                            <field name="service_ids"/>
+                            <group>
+                                <field name="service_ids">
+                                    <tree>
+                                        <field name="create_date"
+                                               string="Date"/>
+                                        <field name="display_name"
+                                               string="Service"/>
+                                        <field name="price"/>
+                                        <field name="currency_id"/>
+                                        <field name="quantity"/>
+                                        <field name="total_amount"/>
+                                    </tree>
+                                </field>
+                                <field name="service_total_amount"/>
+                            </group>
                         </page>
                         <page string="Payments">
-                            <field name="payment_ids"/>
+                            <group>
+                                <field name="payment_ids">
+                                    <tree>
+                                        <field name="create_date"
+                                               string="Date"/>
+                                        <field name="amount"/>
+                                        <field name="currency_id"/>
+                                    </tree>
+                                </field>
+                            </group>
                         </page>
                     </notebook>
                 </sheet>

@@ -46,7 +46,7 @@ class Hostel_booking(models.Model):
     currency_id = fields.Many2one('res.currency', string='Currency',
                                   readonly=True)
 
-    total_bed_price = fields.Monetary(compute='_compute_total_bed_price',
+    total_bed_amount = fields.Monetary(compute='_compute_total_bed_amount',
                                       currency_field='currency_id')
 
     service_ids = fields.One2many('hostel.service',
@@ -54,6 +54,13 @@ class Hostel_booking(models.Model):
     payment_ids = fields.One2many('hostel.payment',
                                  inverse_name='booking_id')
 
+    service_total_amount = fields.Monetary(compute='_compute_total_amount',
+                                           currency_field='currency_id',
+                                           store=True, string='Service total',
+                                           readonly=True)
+    total_amount = fields.Monetary(compute='_compute_total_amount',
+                                   currency_field='currency_id',
+                                   store=True, readonly=True)
     @api.depends('room_id')
     def _compute_room_price(self):
         for rec in self:
@@ -65,9 +72,9 @@ class Hostel_booking(models.Model):
                 rec.currency_id = self.env.company.currency_id.id
 
     @api.depends('room_price', 'booking_days')
-    def _compute_total_bed_price(self):
+    def _compute_total_bed_amount(self):
         for rec in self:
-            rec.total_bed_price = rec.room_price * rec.booking_days
+            rec.total_bed_amount = rec.room_price * rec.booking_days
 
     @api.depends('start_date', 'end_date')
     def _compute_booking_days(self):
@@ -95,11 +102,10 @@ class Hostel_booking(models.Model):
                     _('Booking end date must be at least one day '
                       'later than booking start date.'))
 
-    #TODO: delete this action
-    def action_book(self):
-        return {
-
-        }
+    def _compute_total_amount(self):
+        for rec in self:
+            rec.service_total_amount = sum(service.total_amount for service in rec.service_ids)
+            rec.total_amount = rec.total_bed_amount + rec.service_total_amount
 
     #TODO cant change visit status if payment exist
     #TODO gender booking room constrains

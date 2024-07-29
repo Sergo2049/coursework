@@ -10,7 +10,6 @@
             <form>
                 <sheet>
                     <group>
-                        <field name="payment_date"/>
                         <field name="booking_id"/>
                         <field name="type" widget="radio"
                                    options="{'horizontal' : True}"/>
@@ -27,7 +26,6 @@
         <field name="model">hostel.payment</field>
         <field name="arch" type="xml">
             <search>
-                <field name="payment_date"/>
                 <field name="type"/>
             </search>
         </field>
@@ -37,10 +35,8 @@
         <field name="model">hostel.payment</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="payment_date"/>
                 <field name="booking_id"/>
-                <field name="type" widget="radio"
-                       options="{'horizontal' : True}"/>
+                <field name="type"/>
                 <field name="amount"/>
                 <field name="currency_id"/>
             </tree>
