@@ -235,7 +235,7 @@
     </record>
     <record id="hostel_service_type_7" model="hostel.service.type">
         <field name="name">Swimming Pool</field>
-        <field name="state">notavailable</field>
+        <field name="state">unavailable</field>
         <field name="price">8.00</field>
     </record>
     <record id="hostel_service_type_8" model="hostel.service.type">
@@ -250,7 +250,7 @@
     </record>
     <record id="hostel_service_type_10" model="hostel.service.type">
         <field name="name">Yoga Class</field>
-        <field name="state">available</field>
+        <field name="state">unavailable</field>
         <field name="price">22.00</field>
     </record>
 

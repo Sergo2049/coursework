@@ -1,8 +1,4 @@
-# Copyright 2024 Serhii Vydysh
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
 from odoo import _, api, fields, models
-
 
 class HostelServiceType(models.Model):
 
@@ -10,6 +6,9 @@ class HostelServiceType(models.Model):
     _description = "Hostel Service Type"  # TODO
 
     name = fields.Char(required=True)
+    state = fields.Selection([('available', 'Available'),
+                              ('unavailable', 'Unavailable'),
+                              ], string='Status', default='available')
     is_available = fields.Boolean()
     price = fields.Monetary(currency_field='currency_id',
                             required=True,

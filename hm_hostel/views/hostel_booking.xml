@@ -5,6 +5,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="hostel_booking_form_view">
+        <field name="name">hostel.booking.form.view</field>
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <form>
@@ -24,6 +25,7 @@
                         <field name="room_id"/>
                         <field name="bed_id"/>
                         <field name="total_amount"/>
+                        <field name="is_paid"/>
                     </group>
                     <notebook>
                         <page string="Services">
@@ -53,6 +55,7 @@
                                         <field name="currency_id"/>
                                     </tree>
                                 </field>
+                                <field name="payment_total_amount"/>
                             </group>
                         </page>
                     </notebook>
@@ -63,6 +66,7 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_booking_search_view">
+        <field name="name">hostel.booking.search.view</field>
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <search>
@@ -79,6 +83,7 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_booking_tree_view">
+        <field name="name">hostel.booking.tree.view</field>
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <tree>
@@ -89,16 +94,19 @@
                         display="always"/>
             </header>
                 <field name="display_name"/>
+                <field name="state"/>
                 <field name="booking_days"/>
                 <field name="display_name"/>
                 <field name="visitor_id"/>
                 <field name="room_id"/>
                 <field name="bed_id"/>
+                <field name="is_paid"/>
             </tree>
         </field>
     </record>
 
     <record model="ir.ui.view" id="hostel_booking_calendar_view">
+        <field name="name">hostel.booking.calendar.view</field>
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <calendar date_start="start_date" date_stop="end_date"
@@ -116,6 +124,7 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_booking_kanban_view">
+        <field name="name">hostel.booking.kanban.view</field>
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
             <kanban class="o_kanban_mobile" group_edit="False" default_group_by="state"
@@ -170,10 +179,22 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="hostel_booking_pivot_view">
+        <field name="name">hostel.booking.pivot.view</field>
+        <field name="model">hostel.booking</field>
+        <field name="arch" type="xml">
+            <pivot>
+                <field name="room_id" type="row"/>
+                <field name="end_date" type="col"/>
+                <field name="total_amount" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="hostel_booking_act_window">
         <field name="name">Booking</field>
         <field name="res_model">hostel.booking</field>
-        <field name="view_mode">tree,form,kanban,calendar</field>
+        <field name="view_mode">tree,form,kanban,calendar,pivot</field>
         <field name="domain">[]</field>
         <field name="context">{}</field>
     </record>

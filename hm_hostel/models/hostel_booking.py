@@ -58,9 +58,20 @@ class Hostel_booking(models.Model):
                                            currency_field='currency_id',
                                            store=True, string='Service total',
                                            readonly=True)
+
+    payment_total_amount = fields.Monetary(compute='_compute_payment_total_amount',
+                                           currency_field='currency_id',
+                                           store=True, string='Payment total',
+                                           readonly=True)
+
     total_amount = fields.Monetary(compute='_compute_total_amount',
                                    currency_field='currency_id',
-                                   store=True, readonly=True)
+                                   store=True, readonly=True,
+                                   string='Total')
+
+    is_paid = fields.Boolean(compute='_compute_is_paid',
+                             string='Paid')
+
     @api.depends('room_id')
     def _compute_room_price(self):
         for rec in self:
@@ -102,13 +113,22 @@ class Hostel_booking(models.Model):
                     _('Booking end date must be at least one day '
                       'later than booking start date.'))
 
+    @api.depends('total_bed_amount', 'service_ids')
     def _compute_total_amount(self):
         for rec in self:
             rec.service_total_amount = sum(service.total_amount for service in rec.service_ids)
             rec.total_amount = rec.total_bed_amount + rec.service_total_amount
 
+    @api.depends('payment_ids')
+    def _compute_payment_total_amount(self):
+        for rec in self:
+            rec.payment_total_amount = sum(payment.amount for payment in rec.payment_ids)
+
+    def _compute_is_paid(self):
+        for rec in self:
+            rec.is_paid = rec.payment_total_amount >= rec.total_amount
+
     #TODO cant change visit status if payment exist
-    #TODO gender booking room constrains
-    #TODO compute sum for booking
     #TODO check if room aviable this day
+    #TODO is_paid cant be canceled
 

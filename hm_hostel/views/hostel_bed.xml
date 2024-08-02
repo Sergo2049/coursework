@@ -5,6 +5,7 @@
 <odoo>
 
     <record model="ir.ui.view" id="hostel_bed_form_view">
+        <field name="name">hostel.bed.form.view</field>
         <field name="model">hostel.bed</field>
         <field name="arch" type="xml">
             <form>
@@ -24,6 +25,7 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_bed_search_view">
+        <field name="name">hostel.bed.search.view</field>
         <field name="model">hostel.bed</field>
         <field name="arch" type="xml">
             <search>
@@ -33,6 +35,7 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_bed_tree_view">
+        <field name="name">hostel.bed.tree.view</field>
         <field name="model">hostel.bed</field>
         <field name="arch" type="xml">
             <tree>

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2024 Serhii Vydysh
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo>
-
     <record model="ir.ui.view" id="hostel_service_form_view">
+        <field name="name">hostel.service.form.view</field>
         <field name="model">hostel.service</field>
         <field name="arch" type="xml">
             <form>
@@ -18,12 +15,12 @@
                         <field name="total_amount"/>
                     </group>
                 </sheet>
-                <div class="oe_chatter"></div>
             </form>
         </field>
     </record>
 
     <record model="ir.ui.view" id="hostel_service_search_view">
+        <field name="name">hostel.service.search.view</field>
         <field name="model">hostel.service</field>
         <field name="arch" type="xml">
             <search>
@@ -33,6 +30,7 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_service_tree_view">
+        <field name="name">hostel.service.tree.view</field>
         <field name="model">hostel.service</field>
         <field name="arch" type="xml">
             <tree>

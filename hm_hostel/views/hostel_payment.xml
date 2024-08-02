@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2024 Serhii Vydysh
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo>
-
     <record model="ir.ui.view" id="hostel_payment_form_view">
+        <field name="name">hostel.payment.form.view</field>
         <field name="model">hostel.payment</field>
         <field name="arch" type="xml">
             <form>
@@ -22,16 +19,8 @@
         </field>
     </record>
 
-    <record model="ir.ui.view" id="hostel_payment_search_view">
-        <field name="model">hostel.payment</field>
-        <field name="arch" type="xml">
-            <search>
-                <field name="type"/>
-            </search>
-        </field>
-    </record>
-
     <record model="ir.ui.view" id="hostel_payment_tree_view">
+        <field name="name">hostel.payment.tree.view</field>
         <field name="model">hostel.payment</field>
         <field name="arch" type="xml">
             <tree>
@@ -40,6 +29,16 @@
                 <field name="amount"/>
                 <field name="currency_id"/>
             </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hostel_payment_search_view">
+        <field name="name">hostel.payment.search.view</field>
+        <field name="model">hostel.payment</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="type"/>
+            </search>
         </field>
     </record>
 

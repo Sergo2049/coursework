@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2024 Serhii Vydysh
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo>
-
     <record model="ir.ui.view" id="hostel_visitor_form_view">
+        <field name="name">hostel.visitor.form.view</field>
         <field name="model">hostel.visitor</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <!-- TODO -->
-                </header>
                 <sheet>
                     <group>
                         <group>
@@ -30,12 +24,12 @@
                         <field name="booking_ids"/>
                     </group>
                 </sheet>
-                <div class="oe_chatter"></div>
             </form>
         </field>
     </record>
 
     <record model="ir.ui.view" id="hostel_visitor_search_view">
+        <field name="name">hostel.visitor.search.view</field>
         <field name="model">hostel.visitor</field>
         <field name="arch" type="xml">
             <search>
@@ -46,10 +40,10 @@
     </record>
 
     <record model="ir.ui.view" id="hostel_visitor_tree_view">
+        <field name="name">hostel.visitor.tree.view</field>
         <field name="model">hostel.visitor</field>
         <field name="arch" type="xml">
             <tree>
-                <!-- TODO -->
                 <field name="first_name"/>
                 <field name="last_name"/>
                 <field name="phone"/>
