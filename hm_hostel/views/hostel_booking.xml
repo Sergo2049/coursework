@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2024 Serhii Vydysh
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
@@ -185,8 +183,8 @@
         <field name="arch" type="xml">
             <pivot>
                 <field name="room_id" type="row"/>
-                <field name="end_date" type="col"/>
-                <field name="total_amount" type="measure"/>
+                <field name="end_date"  interval="day" type="col"/>
+                <field name="payment_total_amount" type="measure"/>
             </pivot>
         </field>
     </record>

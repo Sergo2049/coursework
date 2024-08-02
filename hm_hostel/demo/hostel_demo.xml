@@ -254,6 +254,43 @@
         <field name="price">22.00</field>
     </record>
 
+    <!-- Service Records for Non-canceled Bookings -->
+    <record id="hostel_service_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_1"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_2"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_4" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_4"/>
+        <field name="quantity">3</field>
+    </record>
+    <record id="hostel_service_5" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_5"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_7" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_7"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_8" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_8"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_10" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_10"/>
+        <field name="quantity">3</field>
+    </record>
+
     <!-- Demo data for HostelBooking -->
     <record id="hostel_booking_1" model="hostel.booking">
         <field name="start_date">2024-07-20</field>
@@ -333,6 +370,121 @@
         <field name="state">planned</field>
         <field name="visitor_id" ref="hostel_visitor_10"/>
         <field name="bed_id" ref="hostel_bed_10"/>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+ <!-- Service Records for Non-canceled Bookings -->
+    <record id="hostel_service_1_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_1"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_1_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_1"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_2_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_2"/>
+        <field name="quantity">3</field>
+    </record>
+    <record id="hostel_service_2_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_3"/>
+        <field name="booking_id" ref="hostel_booking_2"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_4_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_4"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_4_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_3"/>
+        <field name="booking_id" ref="hostel_booking_4"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_5_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_5"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_5_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_5"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_7_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_7"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_7_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_3"/>
+        <field name="booking_id" ref="hostel_booking_7"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_8_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_8"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_8_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_3"/>
+        <field name="booking_id" ref="hostel_booking_8"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_10_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_10"/>
+        <field name="quantity">3</field>
+    </record>
+    <record id="hostel_service_10_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_10"/>
+        <field name="quantity">1</field>
+    </record>
+
+    <!-- Payment Records for Non-canceled Bookings -->
+    <record id="hostel_payment_1" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_1"/>
+        <field name="amount">200.0</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_payment_2" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_2"/>
+        <field name="amount">300.0</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_payment_4" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_4"/>
+        <field name="amount">250.0</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_payment_5" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_5"/>
+        <field name="amount">350.0</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_payment_7" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_7"/>
+        <field name="amount">400.0</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_payment_8" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_8"/>
+        <field name="amount">450.0</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_payment_10" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_10"/>
+        <field name="amount">500.0</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
 </odoo>
