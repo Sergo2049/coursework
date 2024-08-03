@@ -24,13 +24,6 @@ class CreateBookingWizard(models.TransientModel):
 
     available_bed_ids = fields.Binary(compute='_compute_available_beds')
 
-
-
-    # @api.onchange('planned_start_date', 'planned_end_date')
-    # def _onchange_dates(self):
-    #     if self.planned_start_date and self.planned_end_date:
-    #         available_beds = self.get_booked_beds()
-    #         return {'domain': {'bed_id': [('id', '!in', available_beds)]}}
     @api.depends('planned_start_date', 'planned_end_date')
     def _compute_available_beds(self):
        for wizard in self:
@@ -50,7 +43,6 @@ class CreateBookingWizard(models.TransientModel):
                wizard.available_bed_ids = available_beds
            else:
                wizard.available_bed_ids = []
-
 
     def action_create_booking(self):
         booking_vals = {

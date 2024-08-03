@@ -1,6 +1,3 @@
-# Copyright 2024 Serhii Vydysh
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
 from odoo import _, api, fields, models
 from datetime import timedelta
 from odoo.exceptions import ValidationError
@@ -9,6 +6,8 @@ class Hostel_booking(models.Model):
 
     _name = "hostel.booking"
     _description = "Hostel booking"
+
+    active = fields.Boolean(default=True)
 
     display_name = fields.Char(compute='_compute_display_name',
                            string='Booking')
@@ -26,8 +25,6 @@ class Hostel_booking(models.Model):
                               ('confirmed', 'Confirmed'),
                               ('canceled', 'Canceled')],
                              default='planned')
-    # TODO: Total payment - compute field based on price and duration
-    # TODO: payment_state - compute, readonly
 
     visitor_id = fields.Many2one('hostel.visitor',
                                  required=True)
@@ -47,7 +44,8 @@ class Hostel_booking(models.Model):
                                   readonly=True)
 
     total_bed_amount = fields.Monetary(compute='_compute_total_bed_amount',
-                                      currency_field='currency_id')
+                                       currency_field='currency_id',
+                                       store=True)
 
     service_ids = fields.One2many('hostel.service',
                                   'booking_id')
@@ -116,19 +114,18 @@ class Hostel_booking(models.Model):
     @api.depends('total_bed_amount', 'service_ids')
     def _compute_total_amount(self):
         for rec in self:
-            rec.service_total_amount = sum(service.total_amount for service in rec.service_ids)
+            rec.service_total_amount = sum(service.total_amount
+                                           for service in rec.service_ids)
             rec.total_amount = rec.total_bed_amount + rec.service_total_amount
 
     @api.depends('payment_ids')
     def _compute_payment_total_amount(self):
         for rec in self:
-            rec.payment_total_amount = sum(payment.amount for payment in rec.payment_ids)
+            rec.payment_total_amount = sum(payment.amount
+                                           for payment in rec.payment_ids)
 
     def _compute_is_paid(self):
         for rec in self:
             rec.is_paid = rec.payment_total_amount >= rec.total_amount
 
-    #TODO cant change visit status if payment exist
     #TODO check if room aviable this day
-    #TODO is_paid cant be canceled
-

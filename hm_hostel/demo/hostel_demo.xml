@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2024 Sergii Vydysh
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 
 <odoo noupdate="1">
     <!-- Demo data for HostelVisitor -->
@@ -486,6 +484,30 @@
         <field name="booking_id" ref="hostel_booking_10"/>
         <field name="amount">500.0</field>
         <field name="currency_id" ref="base.USD"/>
+    </record>
+    <!-- hostel demo users-->
+    <!-- Administrator -->
+    <record id="hostel_user_admin" model="res.users">
+        <field name="name">Hostel Admin</field>
+        <field name="login">hsoteladmin</field>
+        <field name="password">123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_manager')])]"/>
+    </record>
+
+    <!-- User -->
+    <record id="hostel_user_user" model="res.users">
+        <field name="name">Hostel User</field>
+        <field name="login">hosteluser</field>
+        <field name="password">123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_user')])]"/>
+    </record>
+
+    <!-- Trainee -->
+    <record id="hostel_user_trainee" model="res.users">
+        <field name="name">Hostel Trainee</field>
+        <field name="login">hostetrainee</field>
+        <field name="password">123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_trainee')])]"/>
     </record>
 </odoo>
 

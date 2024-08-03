@@ -7,7 +7,9 @@ from odoo import _, api, fields, models
 class HostelPayment(models.Model):
 
     _name = "hostel.payment"
-    _description = "Hostel Payment"  # TODO
+    _description = "Hostel Payment"
+
+    active = fields.Boolean(default=True)
 
     type = fields.Selection(selection=[('cash', 'Cash'),
                                        ('credit_card', 'Credit card')],

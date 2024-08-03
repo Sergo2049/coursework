@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2024 Sergii Vydysh
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
 
 <odoo>
 
@@ -9,17 +7,12 @@
         <field name="model">hostel.bed</field>
         <field name="arch" type="xml">
             <form>
-                <header>
-                    <!-- TODO -->
-                </header>
                 <sheet>
-                    <!-- TODO -->
                     <group>
                         <field name="name"/>
                         <field name="room_id"/>
                     </group>
                 </sheet>
-                <div class="oe_chatter"></div>
             </form>
         </field>
     </record>
@@ -29,7 +22,9 @@
         <field name="model">hostel.bed</field>
         <field name="arch" type="xml">
             <search>
-                <!-- TODO -->
+               <group>
+                  <filter string="Room" name="filter_room_id" context="{'group_by':'room_id'}"/>
+               </group>
             </search>
         </field>
     </record>
@@ -51,7 +46,7 @@
         <field name="res_model">hostel.bed</field>
         <field name="view_mode">tree,form</field>
         <field name="domain">[]</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_filter_room_id': 1}</field>
     </record>
 
     <record model="ir.ui.menu" id="hostel_bed_menu">
@@ -60,5 +55,4 @@
         <field name="action" ref="hostel_bed_act_window"/>
         <field name="sequence" eval="40"/>
     </record>
-
 </odoo>

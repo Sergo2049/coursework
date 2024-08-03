@@ -69,8 +69,10 @@
         <field name="arch" type="xml">
             <search>
                 <field name="room_id" operator="ilike"/>
-                <filter name="start_date" date="start_date"/>
-                <filter name="filter_not_canceled" string="Not canceled" domain="[('state', '!=', 'canceled')]"/>
+                <filter name="not_canceled" string="Not canceled" domain="[('state', '!=', 'canceled')]"/>
+                <filter name="start_date" date="start_date" default_period="last_month"/>
+<!--                <filter name="from_last_month" string="From last month"-->
+<!--                        domain="[('start_date', '>=', (context_today() - relativedelta(months=1)).strftime('%%Y-%%m-01'))]"/>-->
                 <searchpanel>
                     <field name="state" icon="fa-ellipsis-v"/>
                     <field name="room_id" icon="fa-bed"/>
@@ -189,12 +191,23 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="hostel_booking_graph_view">
+        <field name="name">hostel.booking.graph.view</field>
+        <field name="model">hostel.booking</field>
+        <field name="arch" type="xml">
+            <graph>
+                <field name="room_id"/>
+                <field name="total_amount" type="measure"/>
+            </graph>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="hostel_booking_act_window">
         <field name="name">Booking</field>
         <field name="res_model">hostel.booking</field>
-        <field name="view_mode">tree,form,kanban,calendar,pivot</field>
+        <field name="view_mode">tree,form,kanban,calendar,pivot,graph</field>
         <field name="domain">[]</field>
-        <field name="context">{}</field>
+        <field name="context">{'search_default_start_date' : 1}</field>
     </record>
 
     <record model="ir.ui.menu" id="hostel_booking_menu">
