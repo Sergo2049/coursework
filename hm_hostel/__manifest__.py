@@ -21,10 +21,8 @@
         'views/hostel_room.xml',
         'views/hostel_payment.xml',
         'wizard/create_booking_wizard_view.xml',
-        "wizard/create_report_booking_profit_wizard.view.xml",
         'views/hostel_booking.xml',
         'reports/report_booking.xml',
-        'reports/report_booking_profit.xml',
     ],
     'demo': [
         'demo/hostel_demo.xml',

@@ -7,7 +7,6 @@ hm_hostel.access_hostel_service,access_hostel_service,hm_hostel.model_hostel_ser
 hm_hostel.access_hostel_service_type,access_hostel_service_type,hm_hostel.model_hostel_service_type,base.group_user,1,0,0,0
 hm_hostel.access_create_booking_wizard,access_create_booking_wizard,hm_hostel.model_create_booking_wizard,base.group_user,1,0,0,0
 hm_hostel.access_hostel_payment,access_hostel_payment,hm_hostel.model_hostel_payment,base.group_user,1,0,0,0
-hm_hostel.access_create_report_booking_profit_wizard,access_create_report_booking_profit_wizard,hm_hostel.model_create_report_booking_profit_wizard,base.group_user,1,0,0,0
 hm_hostel.access_hostel_visitor,access_hostel_visitor,hm_hostel.model_hostel_visitor,hm_hostel.group_hostel_manager,1,1,1,0
 hm_hostel.access_hostel_room,access_hostel_room,hm_hostel.model_hostel_room,hm_hostel.group_hostel_manager,1,1,1,0
 hm_hostel.access_hostel_booking,access_hostel_booking,hm_hostel.model_hostel_booking,hm_hostel.group_hostel_manager,1,1,1,0

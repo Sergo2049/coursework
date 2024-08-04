@@ -134,38 +134,42 @@
                     <t t-name="kanban-box">
                         <div class="oe_kanban_global_click">
                             <div class="oe_kanban_details">
-                                <!-- TODO -->
 
                                 <div class="o_kanban_record_title">
-                                    <strong>
+                                    <span class="fw-bold fs-4">
                                         <field name="display_name"/>
-                                    </strong>
-                                    <div class="o_kanban_record_body">
+                                    </span>
+                                </div>
+                                <div class="o_kanban_record_body">
+
+                                    <div>
+                                        <span class="badge bg-warning text-dark fs-4">
+                                            <field name="state"/>
+                                        </span>
                                     </div>
                                     <div>
-                                        <field name="state"/>
-                                    </div>
-                                    <div>
-                                        <strong>Dates: </strong>
-                                        <field name="start_date"/> -
+                                        <span class="fw-bold">Dates: </span>
+                                        <field name="start_date"/>
+                                        -
                                         <field name="end_date"/>
                                     </div>
                                     <div>
-                                        <strong>Days: </strong>
+                                        <span class="fw-bold">Days: </span>
                                         <field name="booking_days"/>
                                     </div>
                                     <div>
-                                        <strong>Visitor: </strong>
+                                        <span class="fw-bold">Visitor: </span>
                                         <field name="visitor_id"/>
                                     </div>
                                     <div>
-                                        <strong>Room: </strong>
+                                        <span class="fw-bold">Room: </span>
                                         <field name="room_id"/>
                                     </div>
                                     <div>
-                                        <strong>Bed: </strong>
+                                        <span class="fw-bold">Bed: </span>
                                         <field name="bed_id"/>
                                     </div>
+
                                     <progressbar field="state" colors='{"confirmed": "success", "planned": "warning", "canceled": "danger"}'/>
                                 </div>
                                 <div class="o_kanban_record_bottom">

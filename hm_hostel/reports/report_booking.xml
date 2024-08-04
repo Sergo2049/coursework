@@ -38,54 +38,56 @@
                                     <H4>VISITOR INFO</H4>
                                 </p>
                                 <p>
-                                    <strong><span>Visitor: </span></strong>
+                                    <span class="fw-bold">Visitor: </span>
                                     <span t-field="doc.visitor_id"/>
                                 </p>
                                 <p>
-                                    <strong><span>Phone: </span></strong>
+                                    <span class="fw-bold">Phone: </span>
                                     <span t-field="doc.visitor_id.phone"/>
                                 </p>
                                 <p>
-                                    <strong><span>Gender: </span></strong>
+                                    <span class="fw-bold">Gender: </span>
                                     <span t-field="doc.visitor_id.gender"/>
                                 </p>
                             </div>
 
                             <div class="col">
                                 <p>
-                                    <H3>BOOKING INFO</H3>
+                                    <h3>BOOKING INFO</h3>
                                 </p>
                                 <div>
-                                    <strong>Booking: #</strong>
+                                    <span class="fw-bold">Booking: #</span>
                                     <span t-field="doc.id"/>
                                 </div>
                                 <div>
-                                    <strong>Dates:</strong>
+                                    <span class="fw-bold">Dates: </span>
                                     <span t-field="doc.start_date"/>
                                     -
                                     <span t-field="doc.end_date"/>
                                 </div>
                                 <div>
-                                    <strong>Days :</strong>
+                                    <span class="fw-bold">Days: </span>
                                     <span t-field="doc.booking_days"/>
                                 </div>
                                 <div>
-                                    <strong>Room :</strong>
+                                    <span class="fw-bold">Room :</span>
                                     <span t-field="doc.room_id"/>
-                                    <strong>Bed :</strong>
+                                </div>
+                                <div>
+                                    <span class="fw-bold">Bed :</span>
                                     <span t-field="doc.bed_id"/>
                                 </div>
                                 <div>
-                                    <strong>Bed price :</strong>
+                                    <span class="fw-bold">Bed price :</span>
                                     <span t-field="doc.room_price"/>
                                 </div>
                                 <div>
-                                    <strong>Bed total amount :</strong>
+                                    <span class="fw-bold">Bed total amount :</span>
                                     <span t-field="doc.total_bed_amount"/>
                                 </div>
                                 <p>
                                     <H4>
-                                        <strong>Booking TOTAL:</strong>
+                                        <span class="fw-bold">Booking TOTAL:</span>
                                         <span t-field="doc.total_amount"/>
                                     </H4>
                                 </p>
@@ -146,7 +148,7 @@
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <strong>Total:</strong></td>
+                                        <span class="fw-bold">Total:</span>></td>
                                     <td>
                                         <strong>
                                             <span t-field="doc.service_total_amount"/>
@@ -186,7 +188,7 @@
                             <tfoot>
                                 <tr>
                                     <td>
-                                        <strong>Total:</strong>
+                                        <span class="fw-bold">Total:</span>
                                     </td>
                                     <td>
                                         <strong>
@@ -200,7 +202,7 @@
                 </t>
                 <br/>
                 <div class="container">
-                    <strong>Report date:</strong>
+                    <span class="fw-bold">Report date: </span>
                     <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y-%m-%d %H-%M-%S')"/>
 
                 </div>
