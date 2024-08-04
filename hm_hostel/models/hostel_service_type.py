@@ -1,13 +1,13 @@
-from odoo import _, api, fields, models
+from odoo import _, fields, models
 
 class HostelServiceType(models.Model):
 
     _name = "hostel.service.type"
-    _description = "Hostel Service Type"  # TODO
+    _description = "Hostel Service Type"
 
-    name = fields.Char(required=True)
-    state = fields.Selection([('available', 'Available'),
-                              ('unavailable', 'Unavailable'),
+    name = fields.Char(required=True, translate=True)
+    state = fields.Selection([('available', _('Available')),
+                              ('unavailable', _('Unavailable')),
                               ], string='Status', default='available')
     is_available = fields.Boolean()
     price = fields.Monetary(currency_field='currency_id',

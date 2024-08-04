@@ -11,7 +11,8 @@ class HostelRoom(models.Model):
 
     name = fields.Char(string='Room',
                        required=True,
-                       help='Room number')
+                       help='Room number',
+                       translate=True)
 
     active = fields.Boolean(default=True)
 

@@ -21,9 +21,9 @@ class Hostel_booking(models.Model):
     booking_days = fields.Integer(compute='_compute_booking_days',
                                   string='Days')
 
-    state = fields.Selection([('planned', 'Planned'),
-                              ('confirmed', 'Confirmed'),
-                              ('canceled', 'Canceled')],
+    state = fields.Selection([('planned', _('Planned')),
+                              ('confirmed', _('Confirmed')),
+                              ('canceled', _('Canceled'))],
                              default='planned')
 
     visitor_id = fields.Many2one('hostel.visitor',

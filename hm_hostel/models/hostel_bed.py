@@ -10,9 +10,8 @@ class HostelBed(models.Model):
 
     _description = "Hostel Bed"  # TODO
 
-    name = fields.Char(string='Bed',
-                       required=True,
-                       help='Bed number')
+    name = fields.Char(string='Bed', required=True,
+                       help='Bed number', translate=True)
 
     room_id = fields.Many2one(comodel_name='hostel.room',
                               required=True)

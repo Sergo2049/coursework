@@ -38,15 +38,15 @@
                                     <H4>VISITOR INFO</H4>
                                 </p>
                                 <p>
-                                    <strong>Visitor:</strong>
+                                    <strong><span>Visitor: </span></strong>
                                     <span t-field="doc.visitor_id"/>
                                 </p>
                                 <p>
-                                    <strong>Phone:</strong>
+                                    <strong><span>Phone: </span></strong>
                                     <span t-field="doc.visitor_id.phone"/>
                                 </p>
                                 <p>
-                                    <strong>Gender:</strong>
+                                    <strong><span>Gender: </span></strong>
                                     <span t-field="doc.visitor_id.gender"/>
                                 </p>
                             </div>
