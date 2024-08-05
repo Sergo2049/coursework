@@ -11,6 +11,7 @@
                     <group>
                         <field name="name"/>
                         <field name="room_id"/>
+                        <field name="booking_ids"/>
                     </group>
                 </sheet>
             </form>

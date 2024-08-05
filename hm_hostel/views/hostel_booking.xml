@@ -95,8 +95,6 @@
             </header>
                 <field name="display_name"/>
                 <field name="state"/>
-                <field name="booking_days"/>
-                <field name="display_name"/>
                 <field name="visitor_id"/>
                 <field name="room_id"/>
                 <field name="bed_id"/>
