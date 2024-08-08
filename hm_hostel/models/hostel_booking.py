@@ -30,7 +30,8 @@ class Hostel_booking(models.Model):
                                  required=True)
 
     bed_id = fields.Many2one('hostel.bed',
-                                 required=True)
+                             required=True,
+                             domain="[('id', 'in', available_bed_ids)]")
 
     room_id = fields.Many2one(related='bed_id.room_id',
                               string='Room',
@@ -70,6 +71,8 @@ class Hostel_booking(models.Model):
     is_paid = fields.Boolean(compute='_compute_is_paid',
                              string='Paid')
 
+    available_bed_ids = fields.Binary(compute='_compute_available_beds')
+
     @api.depends('room_id')
     def _compute_room_price(self):
         for rec in self:
@@ -100,18 +103,6 @@ class Hostel_booking(models.Model):
                                 f"{rec.start_date.strftime('%Y-%m-%d')} "
                                 f"- {rec.end_date.strftime('%Y-%m-%d')}")
 
-    @api.constrains('start_date', 'end_date')
-    def check_dates(self):
-        """End booking date must be at least one day later the booking start
-        date"""
-        self.ensure_one()
-        if self.end_date and self.start_date:
-            if (self.end_date - self.start_date).days < 1:
-                raise ValidationError(
-                    _('Booking end date must be at least one day '
-                      'later than booking start date.'))
-
-    @api.depends('total_bed_amount', 'service_ids')
     def _compute_total_amount(self):
         for rec in self:
             rec.service_total_amount = sum(service.total_amount
@@ -124,8 +115,44 @@ class Hostel_booking(models.Model):
             rec.payment_total_amount = sum(payment.amount
                                            for payment in rec.payment_ids)
 
+    @api.depends('total_amount', 'payment_total_amount')
     def _compute_is_paid(self):
         for rec in self:
             rec.is_paid = rec.payment_total_amount >= rec.total_amount
+
+    @api.depends('start_date', 'end_date')
+    def _compute_available_beds(self):
+        self.ensure_one()
+        if self.start_date and self.end_date:
+            booked_beds = self.env['hostel.booking'].search(
+                ['!',
+                 '&',
+                 ('start_date', '>=', self.start_date),
+                 ('start_date', '<=', self.end_date),
+                 '&',
+                 ('end_date', '>=', self.start_date),
+                 ('end_date', '<=', self.end_date)])
+            booked_beds = booked_beds.mapped('bed_id.id')
+            all_beds = self.env['hostel.bed'].search([]).ids
+            available_beds = list(set(all_beds) - set(booked_beds))
+
+            print(f"Dates: {self.start_date} - {self.end_date}")
+            print(f'Booked beds:{booked_beds}')
+            print(f'Available beds:{available_beds}')
+
+            self.available_bed_ids = available_beds
+        else:
+            self.available_bed_ids = []
+    @api.constrains('start_date', 'end_date')
+    def check_dates(self):
+        """End booking date must be at least one day later the booking start
+        date"""
+        self.ensure_one()
+        if self.end_date and self.start_date:
+            if (self.end_date - self.start_date).days < 1:
+                raise ValidationError(
+                    _('Booking end date must be at least one day '
+                      'later than booking start date.'))
+
 
     #TODO check if room aviable this day

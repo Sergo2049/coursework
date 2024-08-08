@@ -203,90 +203,53 @@
     <!-- Demo data for HostelServiceType -->
     <record id="hostel_service_type_1" model="hostel.service.type">
         <field name="name">Laundry</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">10.00</field>
     </record>
     <record id="hostel_service_type_2" model="hostel.service.type">
         <field name="name">Breakfast</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">15.00</field>
     </record>
     <record id="hostel_service_type_3" model="hostel.service.type">
         <field name="name">Tour</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">20.00</field>
     </record>
     <record id="hostel_service_type_4" model="hostel.service.type">
         <field name="name">Gym</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">5.00</field>
     </record>
     <record id="hostel_service_type_5" model="hostel.service.type">
         <field name="name">Spa</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">25.00</field>
     </record>
     <record id="hostel_service_type_6" model="hostel.service.type">
         <field name="name">Massage</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">30.00</field>
     </record>
     <record id="hostel_service_type_7" model="hostel.service.type">
         <field name="name">Swimming Pool</field>
-        <field name="state">unavailable</field>
+        <field name="is_available">True</field>
         <field name="price">8.00</field>
     </record>
     <record id="hostel_service_type_8" model="hostel.service.type">
         <field name="name">Sauna</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">18.00</field>
     </record>
     <record id="hostel_service_type_9" model="hostel.service.type">
         <field name="name">Parking</field>
-        <field name="state">available</field>
+        <field name="is_available">True</field>
         <field name="price">12.00</field>
     </record>
     <record id="hostel_service_type_10" model="hostel.service.type">
         <field name="name">Yoga Class</field>
-        <field name="state">unavailable</field>
+        <field name="is_available">True</field>
         <field name="price">22.00</field>
-    </record>
-
-    <!-- Service Records for Non-canceled Bookings -->
-    <record id="hostel_service_1" model="hostel.service">
-        <field name="service_type_id" ref="hostel_service_type_1"/>
-        <field name="booking_id" ref="hostel_booking_1"/>
-        <field name="quantity">2</field>
-    </record>
-    <record id="hostel_service_2" model="hostel.service">
-        <field name="service_type_id" ref="hostel_service_type_2"/>
-        <field name="booking_id" ref="hostel_booking_2"/>
-        <field name="quantity">1</field>
-    </record>
-    <record id="hostel_service_4" model="hostel.service">
-        <field name="service_type_id" ref="hostel_service_type_1"/>
-        <field name="booking_id" ref="hostel_booking_4"/>
-        <field name="quantity">3</field>
-    </record>
-    <record id="hostel_service_5" model="hostel.service">
-        <field name="service_type_id" ref="hostel_service_type_2"/>
-        <field name="booking_id" ref="hostel_booking_5"/>
-        <field name="quantity">1</field>
-    </record>
-    <record id="hostel_service_7" model="hostel.service">
-        <field name="service_type_id" ref="hostel_service_type_1"/>
-        <field name="booking_id" ref="hostel_booking_7"/>
-        <field name="quantity">2</field>
-    </record>
-    <record id="hostel_service_8" model="hostel.service">
-        <field name="service_type_id" ref="hostel_service_type_2"/>
-        <field name="booking_id" ref="hostel_booking_8"/>
-        <field name="quantity">1</field>
-    </record>
-    <record id="hostel_service_10" model="hostel.service">
-        <field name="service_type_id" ref="hostel_service_type_1"/>
-        <field name="booking_id" ref="hostel_booking_10"/>
-        <field name="quantity">3</field>
     </record>
 
     <!-- Demo data for HostelBooking -->
@@ -370,6 +333,44 @@
         <field name="bed_id" ref="hostel_bed_10"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
+
+    <!-- Service Records for Non-canceled Bookings -->
+    <record id="hostel_service_1" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_1"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_2" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_2"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_4" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_4"/>
+        <field name="quantity">3</field>
+    </record>
+    <record id="hostel_service_5" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_5"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_7" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_7"/>
+        <field name="quantity">2</field>
+    </record>
+    <record id="hostel_service_8" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_2"/>
+        <field name="booking_id" ref="hostel_booking_8"/>
+        <field name="quantity">1</field>
+    </record>
+    <record id="hostel_service_10" model="hostel.service">
+        <field name="service_type_id" ref="hostel_service_type_1"/>
+        <field name="booking_id" ref="hostel_booking_10"/>
+        <field name="quantity">3</field>
+    </record>
+
  <!-- Service Records for Non-canceled Bookings -->
     <record id="hostel_service_1_1" model="hostel.service">
         <field name="service_type_id" ref="hostel_service_type_1"/>
@@ -487,13 +488,12 @@
     </record>
     <!-- hostel demo users-->
     <!-- Administrator -->
-    <record id="hostel_user_admin" model="res.users">
-        <field name="name">Hostel Admin</field>
-        <field name="login">hsoteladmin</field>
+    <record id="hostel_user_manager" model="res.users">
+        <field name="name">Hostel Manager</field>
+        <field name="login">hsotelmanager</field>
         <field name="password">123</field>
         <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_manager')])]"/>
     </record>
-
     <!-- User -->
     <record id="hostel_user_user" model="res.users">
         <field name="name">Hostel User</field>
@@ -502,12 +502,5 @@
         <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_user')])]"/>
     </record>
 
-    <!-- Trainee -->
-    <record id="hostel_user_trainee" model="res.users">
-        <field name="name">Hostel Trainee</field>
-        <field name="login">hostetrainee</field>
-        <field name="password">123</field>
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_trainee')])]"/>
-    </record>
 </odoo>
 

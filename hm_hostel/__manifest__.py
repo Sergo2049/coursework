@@ -11,8 +11,8 @@
     'depends': [
     ],
     'data': [
-        'security/ir.model.access.csv',
         'security/hm_hostel_groups.xml',
+        'security/ir.model.access.csv',
         'views/hostel_menu.xml',
         'views/hostel_service_type.xml',
         'views/hostel_service.xml',

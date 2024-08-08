@@ -6,7 +6,7 @@ from odoo import _, api, fields, models
 
 class HostelService(models.Model):
     _name = "hostel.service"
-    _description = "Hostel Service"  # TODO
+    _description = "Hostel Service"
 
     service_type_id = fields.Many2one('hostel.service.type',
                                       domain="[('is_available', '=', True)]",
@@ -24,12 +24,13 @@ class HostelService(models.Model):
 
     currency_id = fields.Many2one(related='service_type_id.currency_id',
                                   string='Currency', readonly=True)
+
     quantity = fields.Integer(required=True,
                               default=1)
+
     total_amount = fields.Monetary(currency_field='currency_id',
                              compute='_compute_total_amount',
                              readonly=True, store=True, string='Total')
-    # TODO: QTY, AMOUNT
 
     @api.depends('service_type_id')
     def _compute_display_name(self):

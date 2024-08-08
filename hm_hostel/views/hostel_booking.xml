@@ -24,6 +24,7 @@
                         <field name="bed_id"/>
                         <field name="total_amount"/>
                         <field name="is_paid"/>
+                        <field name="available_bed_ids" invisible="1"/>
                     </group>
                     <notebook>
                         <page string="Services">
