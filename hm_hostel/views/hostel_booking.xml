@@ -13,18 +13,21 @@
                 </header>
                 <sheet>
                     <group>
-                        <field name="start_date"/>
-                        <field name="end_date"/>
-                        <field name="booking_days"/>
-                        <field name="room_price"/>
-                        <field name="total_bed_amount"/>
-                        <field name="currency_id"/>
-                        <field name="visitor_id"/>
-                        <field name="room_id"/>
-                        <field name="bed_id"/>
-                        <field name="total_amount"/>
-                        <field name="is_paid"/>
-                        <field name="available_bed_ids" invisible="1"/>
+                        <group>
+                            <field name="start_date"/>
+                            <field name="end_date"/>
+                            <field name="booking_days"/>
+                            <field name="room_price"/>
+                            <field name="total_bed_amount"/>
+                            <field name="total_amount"/>
+                            <field name="currency_id"/>
+                        </group>
+                        <group>
+                            <field name="visitor_id"/>
+                            <field name="room_id"/>
+                            <field name="bed_id"/>                            <field name="is_paid"/>
+                            <field name="available_bed_ids" invisible="1"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Services">
@@ -59,7 +62,11 @@
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter"></div>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"/>
+                    <field name="activity_ids"/>
+                    <field name="message_ids"/>
+                </div>
             </form>
         </field>
     </record>
@@ -95,7 +102,7 @@
                         display="always"/>
             </header>
                 <field name="display_name"/>
-                <field name="state"/>
+                <field name="state" widget="badge" decoration-info="state == 'planned'" decoration-success="state == 'confirmed'" decoration-danger="state == 'canceled'" />
                 <field name="visitor_id"/>
                 <field name="room_id"/>
                 <field name="bed_id"/>
@@ -142,9 +149,7 @@
                                 <div class="o_kanban_record_body">
 
                                     <div>
-                                        <span class="badge bg-warning text-dark fs-4">
-                                            <field name="state"/>
-                                        </span>
+                                        <field name="state" widget="badge" decoration-info="state == 'planned'" decoration-success="state == 'confirmed'" decoration-danger="state == 'canceled'"/>
                                     </div>
                                     <div>
                                         <span class="fw-bold">Dates: </span>

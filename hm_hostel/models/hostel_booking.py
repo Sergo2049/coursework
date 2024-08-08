@@ -6,17 +6,17 @@ class Hostel_booking(models.Model):
 
     _name = "hostel.booking"
     _description = "Hostel booking"
-
+    _inherit = ['mail.thread', 'mail.activity.mixin']
     active = fields.Boolean(default=True)
 
     display_name = fields.Char(compute='_compute_display_name',
                            string='Booking')
 
     start_date = fields.Date(default=fields.date.today(),
-                                 required=True)
+                             required=True, tracking=True)
 
     end_date = fields.Date(default=fields.date.today() + timedelta(days=1),
-                               required=True)
+                           required=True, tracking=True)
 
     booking_days = fields.Integer(compute='_compute_booking_days',
                                   string='Days')
@@ -24,13 +24,14 @@ class Hostel_booking(models.Model):
     state = fields.Selection([('planned', _('Planned')),
                               ('confirmed', _('Confirmed')),
                               ('canceled', _('Canceled'))],
-                             default='planned')
+                             default='planned',
+                             tracking=True)
 
     visitor_id = fields.Many2one('hostel.visitor',
-                                 required=True)
+                                 required=True, tracking=True)
 
     bed_id = fields.Many2one('hostel.bed',
-                             required=True,
+                             required=True, tracking=True,
                              domain="[('id', 'in', available_bed_ids)]")
 
     room_id = fields.Many2one(related='bed_id.room_id',
@@ -49,9 +50,11 @@ class Hostel_booking(models.Model):
                                        store=True)
 
     service_ids = fields.One2many('hostel.service',
-                                  'booking_id')
+                                  'booking_id',
+                                  tracking=True)
     payment_ids = fields.One2many('hostel.payment',
-                                 inverse_name='booking_id')
+                                  inverse_name='booking_id',
+                                  tracking=True)
 
     service_total_amount = fields.Monetary(compute='_compute_total_amount',
                                            currency_field='currency_id',
