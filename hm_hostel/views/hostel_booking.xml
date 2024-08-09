@@ -6,7 +6,7 @@
         <field name="name">hostel.booking.form.view</field>
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
-            <form>
+            <form duplicate="0">
                 <header>
                     <field name="state" widget="statusbar"
                            options="{'clickable': '1'}"/>
@@ -25,7 +25,8 @@
                         <group>
                             <field name="visitor_id"/>
                             <field name="room_id"/>
-                            <field name="bed_id"/>                            <field name="is_paid"/>
+                            <field name="bed_id"/>
+                            <field name="is_paid"/>
                             <field name="available_bed_ids" invisible="1"/>
                         </group>
                     </group>
@@ -34,10 +35,8 @@
                             <group>
                                 <field name="service_ids">
                                     <tree>
-                                        <field name="create_date"
-                                               string="Date"/>
-                                        <field name="display_name"
-                                               string="Service"/>
+                                        <field name="create_date" string="Date" optional="hide"/>
+                                        <field name="display_name" string="Service"/>
                                         <field name="price"/>
                                         <field name="currency_id"/>
                                         <field name="quantity"/>
@@ -94,7 +93,7 @@
         <field name="name">hostel.booking.tree.view</field>
         <field name="model">hostel.booking</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree duplicate="0" decoration-success="is_paid">
             <header>
                 <button type="action" string="Book a bed"
                         class="btn-primary"
@@ -104,9 +103,10 @@
                 <field name="display_name"/>
                 <field name="state" widget="badge" decoration-info="state == 'planned'" decoration-success="state == 'confirmed'" decoration-danger="state == 'canceled'" />
                 <field name="visitor_id"/>
-                <field name="room_id"/>
+                <field name="room_id" optional="show"/>
                 <field name="bed_id"/>
                 <field name="is_paid"/>
+                <field name="activity_ids" widget="list_activity"/>
             </tree>
         </field>
     </record>

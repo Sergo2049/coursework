@@ -2,7 +2,7 @@
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 {
-    'name': 'Hm Hostel',
+    'name': 'Hostel management',
     'description': """
         Hostel management""",
     'version': '17.0.1.0.0',
@@ -27,4 +27,8 @@
     'demo': [
         'demo/hostel_demo.xml',
     ],
+    'application': False,
+    'installable': True,
+    'auto_install': False,
+    'readme': 'README.rst',
 }

@@ -105,7 +105,7 @@ class Hostel_booking(models.Model):
             rec.display_name = (f"{rec.visitor_id.display_name}:  "
                                 f"{rec.start_date.strftime('%Y-%m-%d')} "
                                 f"- {rec.end_date.strftime('%Y-%m-%d')}")
-
+    @api.depends('start_date', 'end_date', 'bed_id')
     def _compute_total_amount(self):
         for rec in self:
             rec.service_total_amount = sum(service.total_amount
@@ -118,7 +118,7 @@ class Hostel_booking(models.Model):
             rec.payment_total_amount = sum(payment.amount
                                            for payment in rec.payment_ids)
 
-    @api.depends('total_amount', 'payment_total_amount')
+    @api.depends('total_amount', 'payment_ids')
     def _compute_is_paid(self):
         for rec in self:
             rec.is_paid = rec.payment_total_amount >= rec.total_amount

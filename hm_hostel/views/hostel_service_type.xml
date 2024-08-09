@@ -8,7 +8,7 @@
                 <sheet>
                     <group>
                         <field name="name"/>
-                        <field name="is_available"/>
+                        <field name="is_available" widget="boolean_toggle"/>
                         <field name="price"/>
                         <field name="currency_id"/>
                     </group>
