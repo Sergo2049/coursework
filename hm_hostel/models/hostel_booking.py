@@ -2,7 +2,7 @@ from odoo import _, api, fields, models
 from datetime import timedelta
 from odoo.exceptions import ValidationError
 
-class Hostel_booking(models.Model):
+class HostelBooking(models.Model):
 
     _name = "hostel.booking"
     _description = "Hostel booking"
@@ -127,13 +127,13 @@ class Hostel_booking(models.Model):
     def _compute_available_beds(self):
         self.ensure_one()
         if self.start_date and self.end_date:
-            booked_beds = self.env['hostel.booking'].search(
-                ['&', ('state', '!=', 'canceled'),
-                 '|',
-                 '&', ('start_date', '<=', self.start_date),
-                 ('end_date', '>=', self.start_date),
-                 '&', ('start_date', '<=', self.end_date),
-                 ('end_date', '>=', self.end_date)])
+
+            domain = [('state', '!=', 'canceled'),
+                      ('start_date', '<=', self.end_date),
+                      ('end_date', '>=', self.start_date)]
+            if self.id:
+                domain.append(('id', '!=', self.id))
+            booked_beds = self.env['hostel.booking'].search(domain)
 
             booked_beds = booked_beds.mapped('bed_id.id')
             all_beds = self.env['hostel.bed'].search([]).ids
@@ -152,11 +152,23 @@ class Hostel_booking(models.Model):
                     _('Booking end date must be at least one day '
                       'later than booking start date.'))
 
+    # TODO
+    def check_is_room_available(self):
+        """Check if the selected bed is available."""
+        self.ensure_one()
+        if self.bed_id.id not in self.available_bed_ids:
+            raise ValidationError('The selected bed is not available for the specified dates.')
 
-    # @api.constrains('bed_id')
-    # def check_is_room_available(self):
-    #     self.ensure_one()
-    #     if self.bed not in self.available_bed_ids:
-    #         raise ValidationError('no')
+    @api.model
+    def create(self, vals):
+        """Check if the selected bed is available."""
+        record = super(HostelBooking, self).create(vals)
+        record.check_is_room_available()
+        return record
 
+    def write(self, vals):
+        """Check if the selected bed is available."""
+        res = super(HostelBooking, self).write(vals)
+        self.check_is_room_available()
+        return res
 
