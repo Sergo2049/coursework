@@ -128,21 +128,16 @@ class Hostel_booking(models.Model):
         self.ensure_one()
         if self.start_date and self.end_date:
             booked_beds = self.env['hostel.booking'].search(
-                ['&',
-                 '&', ('state', '!=', 'canceled'), ('id', '!=', self.id),
+                ['&', ('state', '!=', 'canceled'),
                  '|',
                  '&', ('start_date', '<=', self.start_date),
                  ('end_date', '>=', self.start_date),
                  '&', ('start_date', '<=', self.end_date),
                  ('end_date', '>=', self.end_date)])
+
             booked_beds = booked_beds.mapped('bed_id.id')
             all_beds = self.env['hostel.bed'].search([]).ids
             available_beds = list(set(all_beds) - set(booked_beds))
-
-            print(f"Dates: {self.start_date} - {self.end_date}")
-            print(f'Booked beds:{booked_beds}')
-            print(f'Available beds:{available_beds}')
-
             self.available_bed_ids = available_beds
         else:
             self.available_bed_ids = []
@@ -158,4 +153,10 @@ class Hostel_booking(models.Model):
                       'later than booking start date.'))
 
 
-    #TODO check if room aviable this day
+    # @api.constrains('bed_id')
+    # def check_is_room_available(self):
+    #     self.ensure_one()
+    #     if self.bed not in self.available_bed_ids:
+    #         raise ValidationError('no')
+
+
