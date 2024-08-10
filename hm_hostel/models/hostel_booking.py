@@ -7,6 +7,7 @@ class HostelBooking(models.Model):
     _name = "hostel.booking"
     _description = "Hostel booking"
     _inherit = ['mail.thread', 'mail.activity.mixin']
+
     active = fields.Boolean(default=True)
 
     display_name = fields.Char(compute='_compute_display_name',
