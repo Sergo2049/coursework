@@ -87,7 +87,7 @@
                                 </div>
                                 <p>
                                     <H4>
-                                        <span class="fw-bold">Booking TOTAL:</span>
+                                        <span class="fw-bold">Booking TOTAL: </span>
                                         <span t-field="doc.total_amount"/>
                                     </H4>
                                 </p>
@@ -148,7 +148,7 @@
                                     <td></td>
                                     <td></td>
                                     <td>
-                                        <span class="fw-bold">Total:</span>></td>
+                                        <span class="fw-bold">Total: </span></td>
                                     <td>
                                         <strong>
                                             <span t-field="doc.service_total_amount"/>

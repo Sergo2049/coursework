@@ -105,7 +105,7 @@ class Hostel_booking(models.Model):
             rec.display_name = (f"{rec.visitor_id.display_name}:  "
                                 f"{rec.start_date.strftime('%Y-%m-%d')} "
                                 f"- {rec.end_date.strftime('%Y-%m-%d')}")
-    @api.depends('start_date', 'end_date', 'bed_id')
+    @api.depends('start_date', 'end_date', 'bed_id', 'service_ids')
     def _compute_total_amount(self):
         for rec in self:
             rec.service_total_amount = sum(service.total_amount
@@ -128,13 +128,13 @@ class Hostel_booking(models.Model):
         self.ensure_one()
         if self.start_date and self.end_date:
             booked_beds = self.env['hostel.booking'].search(
-                ['!',
-                 '&',
-                 ('start_date', '>=', self.start_date),
-                 ('start_date', '<=', self.end_date),
-                 '&',
+                ['&',
+                 '&', ('state', '!=', 'canceled'), ('id', '!=', self.id),
+                 '|',
+                 '&', ('start_date', '<=', self.start_date),
                  ('end_date', '>=', self.start_date),
-                 ('end_date', '<=', self.end_date)])
+                 '&', ('start_date', '<=', self.end_date),
+                 ('end_date', '>=', self.end_date)])
             booked_beds = booked_beds.mapped('bed_id.id')
             all_beds = self.env['hostel.bed'].search([]).ids
             available_beds = list(set(all_beds) - set(booked_beds))
