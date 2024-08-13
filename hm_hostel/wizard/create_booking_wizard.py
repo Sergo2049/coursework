@@ -26,23 +26,22 @@ class CreateBookingWizard(models.TransientModel):
 
     @api.depends('planned_start_date', 'planned_end_date')
     def _compute_available_beds(self):
-       for wizard in self:
-           if wizard.planned_start_date and wizard.planned_end_date:
-               booked_beds = self.env['hostel.booking'].search(
-                   ['!','&', ('start_date', '>=', self.planned_start_date),
-                    ('start_date', '<=', self.planned_end_date), '&',
-                    ('end_date', '>=', self.planned_start_date),
-                    ('end_date', '<=', self.planned_end_date)])
-               booked_beds = booked_beds.mapped('bed_id.id')
-               all_beds = self.env['hostel.bed'].search([]).ids
-               available_beds = list(set(all_beds) - set(booked_beds))
+        self.ensure_one()
+        if self.planned_start_date and self.planned_end_date:
 
-               print(f'Booked beds:{booked_beds}')
-               print(f'Booked beds:{available_beds}')
+            domain = [('state', '!=', 'canceled'),
+                      ('start_date', '<=', self.planned_end_date),
+                      ('end_date', '>=', self.planned_start_date)]
+            if self.id:
+                domain.append(('id', '!=', self.id))
+            booked_beds = self.env['hostel.booking'].search(domain)
 
-               wizard.available_bed_ids = available_beds
-           else:
-               wizard.available_bed_ids = []
+            booked_beds = booked_beds.mapped('bed_id.id')
+            all_beds = self.env['hostel.bed'].search([]).ids
+            available_beds = list(set(all_beds) - set(booked_beds))
+            self.available_bed_ids = available_beds
+        else:
+            self.available_bed_ids = []
 
     def action_create_booking(self):
         booking_vals = {

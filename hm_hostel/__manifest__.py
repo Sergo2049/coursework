@@ -11,7 +11,7 @@
     'depends': ['base', 'mail'
     ],
     'data': [
-        'security/hm_hostel_groups.xml',
+        'security/hostel_groups.xml',
         'security/ir.model.access.csv',
         'views/hostel_menu.xml',
         'views/hostel_service_type.xml',

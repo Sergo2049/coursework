@@ -1,5 +1,3 @@
-# Copyright 2024 Serhii Vydysh
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
@@ -8,7 +6,7 @@ from odoo.exceptions import ValidationError
 class HostelVisitor(models.Model):
 
     _name = "hostel.visitor"
-    _description = "Hostel Visitor"  # TODO
+    _description = "Hostel Visitor"
 
     first_name = fields.Char(required=True)
 

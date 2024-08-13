@@ -153,7 +153,6 @@ class HostelBooking(models.Model):
                     _('Booking end date must be at least one day '
                       'later than booking start date.'))
 
-    # TODO
     def check_is_room_available(self):
         """Check if the selected bed is available."""
         self.ensure_one()
