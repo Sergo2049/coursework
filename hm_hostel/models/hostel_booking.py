@@ -1,6 +1,7 @@
-from odoo import _, api, fields, models
 from datetime import timedelta
+from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
+
 
 class HostelBooking(models.Model):
 
@@ -11,7 +12,7 @@ class HostelBooking(models.Model):
     active = fields.Boolean(default=True)
 
     display_name = fields.Char(compute='_compute_display_name',
-                           string='Booking')
+                               string='Booking')
 
     start_date = fields.Date(default=fields.date.today(),
                              required=True, tracking=True)
@@ -28,7 +29,7 @@ class HostelBooking(models.Model):
                              default='planned',
                              tracking=True)
 
-    visitor_id = fields.Many2one('hostel.visitor',
+    visitor_id = fields.Many2one('res.partner',
                                  required=True, tracking=True)
 
     bed_id = fields.Many2one('hostel.bed',
@@ -40,7 +41,6 @@ class HostelBooking(models.Model):
                               store=True)
 
     room_price = fields.Monetary(compute='_compute_room_price',
-                                 string='Room Price',
                                  store=True)
 
     currency_id = fields.Many2one('res.currency', string='Currency',
@@ -62,10 +62,11 @@ class HostelBooking(models.Model):
                                            store=True, string='Service total',
                                            readonly=True)
 
-    payment_total_amount = fields.Monetary(compute='_compute_payment_total_amount',
-                                           currency_field='currency_id',
-                                           store=True, string='Payment total',
-                                           readonly=True)
+    payment_total_amount = fields.Monetary(
+        compute='_compute_payment_total_amount',
+        currency_field='currency_id',
+        store=True, string='Payment total',
+        readonly=True)
 
     total_amount = fields.Monetary(compute='_compute_total_amount',
                                    currency_field='currency_id',
@@ -106,6 +107,7 @@ class HostelBooking(models.Model):
             rec.display_name = (f"{rec.visitor_id.display_name}:  "
                                 f"{rec.start_date.strftime('%Y-%m-%d')} "
                                 f"- {rec.end_date.strftime('%Y-%m-%d')}")
+
     @api.depends('start_date', 'end_date', 'bed_id', 'service_ids')
     def _compute_total_amount(self):
         for rec in self:
@@ -142,6 +144,7 @@ class HostelBooking(models.Model):
             self.available_bed_ids = available_beds
         else:
             self.available_bed_ids = []
+
     @api.constrains('start_date', 'end_date')
     def check_dates(self):
         """End booking date must be at least one day later the booking start
@@ -157,18 +160,19 @@ class HostelBooking(models.Model):
         """Check if the selected bed is available."""
         self.ensure_one()
         if self.bed_id.id not in self.available_bed_ids:
-            raise ValidationError('The selected bed is not available for the specified dates.')
+            raise ValidationError(
+                _('The selected bed is not available for '
+                  'the specified dates.'))
 
-    @api.model
     def create(self, vals):
         """Check if the selected bed is available."""
-        record = super(HostelBooking, self).create(vals)
-        record.check_is_room_available()
-        return record
+        records = super(HostelBooking, self).create(vals)
+        for record in records:
+            record.check_is_room_available()
+        return records
 
     def write(self, vals):
         """Check if the selected bed is available."""
         res = super(HostelBooking, self).write(vals)
         self.check_is_room_available()
         return res
-

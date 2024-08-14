@@ -1,4 +1,5 @@
-from odoo import _, fields, models
+from odoo import fields, models
+
 
 class HostelServiceType(models.Model):
 
@@ -18,4 +19,4 @@ class HostelServiceType(models.Model):
                                   'Currency',
                                   readonly=True,
                                   default=lambda
-                                      self: self.env.company.currency_id)
+                                  self: self.env.company.currency_id)

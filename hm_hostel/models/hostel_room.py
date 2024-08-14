@@ -1,7 +1,4 @@
-# Copyright 2024 Serhii Vydysh
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
-from odoo import _, api, fields, models
+from odoo import fields, models
 
 
 class HostelRoom(models.Model):
@@ -17,8 +14,8 @@ class HostelRoom(models.Model):
     active = fields.Boolean(default=True)
 
     type = fields.Selection([('shared', 'Shared'),
-                                       ('private', 'Private')
-                                       ],
+                             ('private', 'Private')
+                             ],
                             default='shared',
                             required=True)
     price = fields.Monetary(currency_field='currency_id',
@@ -27,7 +24,8 @@ class HostelRoom(models.Model):
     currency_id = fields.Many2one('res.currency',
                                   'Currency',
                                   readonly=True,
-                                  default=lambda self: self.env.company.currency_id)
+                                  default=lambda
+                                  self: self.env.company.currency_id)
 
     bed_ids = fields.One2many(comodel_name='hostel.bed',
                               inverse_name='room_id',

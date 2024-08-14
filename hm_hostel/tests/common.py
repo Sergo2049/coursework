@@ -1,13 +1,16 @@
+from datetime import timedelta
 from odoo.tests.common import TransactionCase
 from odoo import fields
-from datetime import timedelta
+
 
 class TestCommon(TransactionCase):
     def setUp(self):
         super(TestCommon, self).setUp()
         self.group_hostel_user = self.env.ref('hm_hostel.group_hostel_user')
-        self.group_hostel_trainee = self.env.ref('hm_hostel.group_hostel_trainee')
-        self.group_hostel_manager = self.env.ref('hm_hostel.group_hostel_manager')
+        self.group_hostel_trainee = self.env.ref(
+            'hm_hostel.group_hostel_trainee')
+        self.group_hostel_manager = self.env.ref(
+            'hm_hostel.group_hostel_manager')
         self.hostel_user = self.env['res.users'].create({
             'name': 'Hostel User Test',
             'login': 'hostel_user_test',
@@ -28,7 +31,7 @@ class TestCommon(TransactionCase):
         })
         self.currency = self.env.company.currency_id.id
         self.visitor_test = self.env['hostel.visitor'].create({
-            'first_name':'Ivan',
+            'first_name': 'Ivan',
             'last_name': 'Ivanov',
             'phone': '+380945678899',
             'gender': 'male'
@@ -64,4 +67,3 @@ class TestCommon(TransactionCase):
             'amount': 50,
             'booking_id': self.booking_test.id,
         })
-

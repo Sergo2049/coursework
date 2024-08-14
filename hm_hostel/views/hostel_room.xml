@@ -16,7 +16,7 @@
                     </group>
                         <field name="bed_ids" nolabel="1"
                                widget="one2many_list">
-                            <tree string="Beds" editable="bottom">
+                            <tree name="Beds" editable="bottom">
                                 <field name="name"/>
 <!--                                <field name="room_id"/>-->
                                 <field name="room_id"/>

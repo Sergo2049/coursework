@@ -2,76 +2,66 @@
 
 <odoo noupdate="1">
     <!-- Demo data for HostelVisitor -->
-    <record id="hostel_visitor_1" model="hostel.visitor">
-        <field name="first_name">John</field>
-        <field name="last_name">Doe</field>
-        <field name="phone">+1234567890</field>
-        <field name="passport_data">Passport data 1</field>
-        <field name="gender">male</field>
-    </record>
-    <record id="hostel_visitor_2" model="hostel.visitor">
-        <field name="first_name">Jane</field>
-        <field name="last_name">Smith</field>
-        <field name="phone">+0987654321</field>
-        <field name="passport_data">Passport data 2</field>
-        <field name="gender">female</field>
-    </record>
-    <record id="hostel_visitor_3" model="hostel.visitor">
-        <field name="first_name">Alice</field>
-        <field name="last_name">Johnson</field>
-        <field name="phone">+1122334455</field>
-        <field name="passport_data">Passport data 3</field>
-        <field name="gender">female</field>
-    </record>
-    <record id="hostel_visitor_4" model="hostel.visitor">
-        <field name="first_name">Bob</field>
-        <field name="last_name">Williams</field>
-        <field name="phone">+2233445566</field>
-        <field name="passport_data">Passport data 4</field>
-        <field name="gender">male</field>
-    </record>
-    <record id="hostel_visitor_5" model="hostel.visitor">
-        <field name="first_name">Charlie</field>
-        <field name="last_name">Brown</field>
-        <field name="phone">+3344556677</field>
-        <field name="passport_data">Passport data 5</field>
-        <field name="gender">male</field>
-    </record>
-    <record id="hostel_visitor_6" model="hostel.visitor">
-        <field name="first_name">David</field>
-        <field name="last_name">Taylor</field>
-        <field name="phone">+4455667788</field>
-        <field name="passport_data">Passport data 6</field>
-        <field name="gender">male</field>
-    </record>
-    <record id="hostel_visitor_7" model="hostel.visitor">
-        <field name="first_name">Eva</field>
-        <field name="last_name">Anderson</field>
-        <field name="phone">+5566778899</field>
-        <field name="passport_data">Passport data 7</field>
-        <field name="gender">female</field>
-    </record>
-    <record id="hostel_visitor_8" model="hostel.visitor">
-        <field name="first_name">Frank</field>
-        <field name="last_name">Martinez</field>
-        <field name="phone">+6677889900</field>
-        <field name="passport_data">Passport data 8</field>
-        <field name="gender">male</field>
-    </record>
-    <record id="hostel_visitor_9" model="hostel.visitor">
-        <field name="first_name">Grace</field>
-        <field name="last_name">Lee</field>
-        <field name="phone">+7788990011</field>
-        <field name="passport_data">Passport data 9</field>
-        <field name="gender">female</field>
-    </record>
-    <record id="hostel_visitor_10" model="hostel.visitor">
-        <field name="first_name">Henry</field>
-        <field name="last_name">Walker</field>
-        <field name="phone">+8899001122</field>
-        <field name="passport_data">Passport data 10</field>
-        <field name="gender">male</field>
-    </record>
+            <record id="res_partner_demo_1" model="res.partner">
+            <field name="name">John Doe</field>
+            <field name="mobile">+1234567890</field>
+            <field name="passport_data">Passport Data 1</field>
+            <field name="gender">male</field>
+        </record>
+        <record id="res_partner_demo_2" model="res.partner">
+            <field name="name">Jane Doe</field>
+            <field name="mobile">+1234567891</field>
+            <field name="passport_data">Passport Data 2</field>
+            <field name="gender">female</field>
+        </record>
+        <record id="res_partner_demo_3" model="res.partner">
+            <field name="name">Alice Johnson</field>
+            <field name="mobile">+1234567892</field>
+            <field name="passport_data">Passport Data 3</field>
+            <field name="gender">female</field>
+        </record>
+        <record id="res_partner_demo_4" model="res.partner">
+            <field name="name">Bob Smith</field>
+            <field name="mobile">+1234567893</field>
+            <field name="passport_data">Passport Data 4</field>
+            <field name="gender">male</field>
+        </record>
+        <record id="res_partner_demo_5" model="res.partner">
+            <field name="name">Charlie Brown</field>
+            <field name="mobile">+1234567894</field>
+            <field name="passport_data">Passport Data 5</field>
+            <field name="gender">male</field>
+        </record>
+        <record id="res_partner_demo_6" model="res.partner">
+            <field name="name">David Wilson</field>
+            <field name="mobile">+1234567895</field>
+            <field name="passport_data">Passport Data 6</field>
+            <field name="gender">male</field>
+        </record>
+        <record id="res_partner_demo_7" model="res.partner">
+            <field name="name">Eve Davis</field>
+            <field name="mobile">+1234567896</field>
+            <field name="passport_data">Passport Data 7</field>
+            <field name="gender">female</field>
+        </record>
+        <record id="res_partner_demo_8" model="res.partner">
+            <field name="name">Frank Moore</field>
+            <field name="mobile">+1234567897</field>
+            <field name="passport_data">Passport Data 8</field>
+            <field name="gender">male</field>
+        </record>
+        <record id="res_partner_demo_9" model="res.partner">
+            <field name="name">Grace Lee</field>
+            <field name="mobile">+1234567898</field>
+            <field name="passport_data">Passport Data 9</field>
+            <field name="gender">female</field>
+        </record>
+        <record id="res_partner_demo_10" model="res.partner">
+            <field name="name">Henry Taylor</field>
+            <field name="mobile">+1234567899</field>
+            <field name="passport_data">Passport Data 10</field>
+            <field name="gender">male</field>
+        </record>
 
     <!-- Demo data for HostelRoom -->
     <record id="hostel_room_1" model="hostel.room">
@@ -257,7 +247,7 @@
         <field name="start_date">2024-07-20</field>
         <field name="end_date">2024-07-22</field>
         <field name="state">planned</field>
-        <field name="visitor_id" ref="hostel_visitor_1"/>
+        <field name="visitor_id" ref="res_partner_demo_1"/>
         <field name="bed_id" ref="hostel_bed_1"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -265,7 +255,7 @@
         <field name="start_date">2024-07-21</field>
         <field name="end_date">2024-07-23</field>
         <field name="state">confirmed</field>
-        <field name="visitor_id" ref="hostel_visitor_2"/>
+        <field name="visitor_id" ref="res_partner_demo_2"/>
         <field name="bed_id" ref="hostel_bed_2"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -273,7 +263,7 @@
         <field name="start_date">2024-07-22</field>
         <field name="end_date">2024-07-24</field>
         <field name="state">canceled</field>
-        <field name="visitor_id" ref="hostel_visitor_3"/>
+        <field name="visitor_id" ref="res_partner_demo_3"/>
         <field name="bed_id" ref="hostel_bed_3"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -281,7 +271,7 @@
         <field name="start_date">2024-07-23</field>
         <field name="end_date">2024-07-25</field>
         <field name="state">planned</field>
-        <field name="visitor_id" ref="hostel_visitor_4"/>
+        <field name="visitor_id" ref="res_partner_demo_4"/>
         <field name="bed_id" ref="hostel_bed_4"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -289,7 +279,7 @@
         <field name="start_date">2024-07-24</field>
         <field name="end_date">2024-07-26</field>
         <field name="state">confirmed</field>
-        <field name="visitor_id" ref="hostel_visitor_5"/>
+        <field name="visitor_id" ref="res_partner_demo_5"/>
         <field name="bed_id" ref="hostel_bed_5"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -297,7 +287,7 @@
         <field name="start_date">2024-07-25</field>
         <field name="end_date">2024-07-27</field>
         <field name="state">canceled</field>
-        <field name="visitor_id" ref="hostel_visitor_6"/>
+        <field name="visitor_id" ref="res_partner_demo_6"/>
         <field name="bed_id" ref="hostel_bed_6"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -305,7 +295,7 @@
         <field name="start_date">2024-07-26</field>
         <field name="end_date">2024-07-28</field>
         <field name="state">planned</field>
-        <field name="visitor_id" ref="hostel_visitor_7"/>
+        <field name="visitor_id" ref="res_partner_demo_7"/>
         <field name="bed_id" ref="hostel_bed_7"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -313,7 +303,7 @@
         <field name="start_date">2024-07-27</field>
         <field name="end_date">2024-07-29</field>
         <field name="state">confirmed</field>
-        <field name="visitor_id" ref="hostel_visitor_8"/>
+        <field name="visitor_id" ref="res_partner_demo_8"/>
         <field name="bed_id" ref="hostel_bed_8"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -321,7 +311,7 @@
         <field name="start_date">2024-07-28</field>
         <field name="end_date">2024-07-30</field>
         <field name="state">canceled</field>
-        <field name="visitor_id" ref="hostel_visitor_9"/>
+        <field name="visitor_id" ref="res_partner_demo_9"/>
         <field name="bed_id" ref="hostel_bed_9"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -329,7 +319,7 @@
         <field name="start_date">2024-07-29</field>
         <field name="end_date">2024-07-31</field>
         <field name="state">planned</field>
-        <field name="visitor_id" ref="hostel_visitor_10"/>
+        <field name="visitor_id" ref="res_partner_demo_10"/>
         <field name="bed_id" ref="hostel_bed_10"/>
         <field name="currency_id" ref="base.USD"/>
     </record>
@@ -488,19 +478,21 @@
     </record>
     <!-- hostel demo users-->
     <!-- Administrator -->
-    <record id="hostel_user_manager" model="res.users">
-        <field name="name">Hostel Manager</field>
-        <field name="login">hsotelmanager</field>
-        <field name="password">123</field>
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_manager')])]"/>
-    </record>
-    <!-- User -->
-    <record id="hostel_user_user" model="res.users">
-        <field name="name">Hostel User</field>
-        <field name="login">hosteluser</field>
-        <field name="password">123</field>
-        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_user')])]"/>
-    </record>
+<!--    <record id="hostel_user_manager" model="res.users">-->
+<!--        <field name="name">Hostel Manager</field>-->
+<!--        <field name="login">hsotelmanager</field>-->
+<!--        <field name="password">123</field>-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_manager')])]"/>-->
+<!--        <context>{'no_reset_password': True}</context>-->
+<!--    </record>-->
+<!--    &lt;!&ndash; User &ndash;&gt;-->
+<!--    <record id="hostel_user_user" model="res.users">-->
+<!--        <field name="name">Hostel User</field>-->
+<!--        <field name="login">hosteluser</field>-->
+<!--        <field name="password">123</field>-->
+<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_user')])]"/>-->
+<!--        <context>{'no_reset_password': True}</context>-->
+<!--    </record>-->
 
 </odoo>
 

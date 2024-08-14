@@ -1,7 +1,7 @@
-from odoo.addons.hm_hostel.tests.common  import TestCommon
-from odoo.tests import tagged
-from odoo.exceptions import ValidationError, AccessError
 from datetime import date, timedelta
+from odoo.addons.hm_hostel.tests.common import TestCommon
+from odoo.tests import tagged
+from odoo.exceptions import ValidationError
 
 
 @tagged('post_install', '-at_install', 'actions', 'hostel')
@@ -57,4 +57,3 @@ class TestActions(TestCommon):
                 'last_name': 'Makariv',
                 'phone': '+3809998887766',
                 'gender': 'female'})
-

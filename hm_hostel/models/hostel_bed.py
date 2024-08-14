@@ -1,7 +1,4 @@
-# Copyright 2024 Sergii Vydysh
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class HostelBed(models.Model):

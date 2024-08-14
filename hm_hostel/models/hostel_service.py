@@ -1,7 +1,4 @@
-# Copyright 2024 Serhii Vydysh
-# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
-
-from odoo import _, api, fields, models
+from odoo import api, fields, models
 
 
 class HostelService(models.Model):
@@ -29,15 +26,15 @@ class HostelService(models.Model):
                               default=1)
 
     total_amount = fields.Monetary(currency_field='currency_id',
-                             compute='_compute_total_amount',
-                             readonly=True, store=True, string='Total')
+                                   compute='_compute_total_amount',
+                                   readonly=True, store=True, string='Total')
 
     @api.depends('service_type_id')
     def _compute_display_name(self):
         for rec in self:
             rec.display_name = rec.service_type_id.name
 
-    @api.depends('price','quantity')
+    @api.depends('price', 'quantity')
     def _compute_total_amount(self):
         for rec in self:
             rec.total_amount = rec.price * rec.quantity

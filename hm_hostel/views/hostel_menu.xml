@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2024 Serhii Vydysh
-     License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl). -->
-
 <odoo>
 
 <record model="ir.ui.menu" id="hostel_root_menu">
-        <field name="name">Hostel</field>
-        <field name="sequence" eval="16"/>
-    </record>
+    <field name="name">Hostel</field>
+<!--    <field name="web_icon" eval="hm_hostel,static/src/img/hotel_icon.png"/>-->
+    <field name="sequence" eval="16"/>
+</record>
 </odoo>

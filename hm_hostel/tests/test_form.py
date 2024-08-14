@@ -1,6 +1,7 @@
-from odoo.addons.hm_hostel.tests.common  import TestCommon
+from odoo.addons.hm_hostel.tests.common import TestCommon
 from odoo.tests import tagged
 from odoo.tests.common import Form
+
 
 @tagged('post_install', '-at_install', 'form', 'hostel')
 class TestForm(TestCommon):
@@ -14,4 +15,3 @@ class TestForm(TestCommon):
         """Default payment type must be credit card"""
         payment_form = Form(self.payment_test)
         self.assertEqual(payment_form.type, 'credit_card')
-
