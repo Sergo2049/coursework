@@ -3,7 +3,7 @@
 
 <record model="ir.ui.menu" id="hostel_root_menu">
     <field name="name">Hostel</field>
-<!--    <field name="web_icon" eval="hm_hostel,static/src/img/hotel_icon.png"/>-->
+<!--    <field name="web_icon" eval="hm_hostel,static/img/hotel_icon.png"/>-->
     <field name="sequence" eval="16"/>
 </record>
 </odoo>

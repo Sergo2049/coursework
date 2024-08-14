@@ -45,13 +45,12 @@ class CreateBookingWizard(models.TransientModel):
             self.available_bed_ids = []
 
     def action_create_booking(self):
-
+        self.ensure_one()
         return {
             'name': 'New booking',
             'type': 'ir.actions.act_window',
             'view_mode': 'form',
             'res_model': 'hostel.booking',
-            # 'res_id': new_booking.id,
             'target': 'new',
             'context': {
                 'default_start_date': self.planned_start_date,

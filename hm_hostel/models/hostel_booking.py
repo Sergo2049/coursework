@@ -78,6 +78,21 @@ class HostelBooking(models.Model):
 
     available_bed_ids = fields.Binary(compute='_compute_available_beds')
 
+    @api.depends('visitor_id', 'start_date', 'end_date')
+    def _compute_display_name(self):
+        for rec in self:
+            rec.display_name = (f"{rec.visitor_id.display_name}:  "
+                                f"{rec.start_date.strftime('%Y-%m-%d')} "
+                                f"- {rec.end_date.strftime('%Y-%m-%d')}")
+
+    @api.depends('start_date', 'end_date')
+    def _compute_booking_days(self):
+        for rec in self:
+            if rec.start_date and rec.end_date:
+                rec.booking_days = (rec.end_date - rec.start_date).days
+            else:
+                rec.booking_days = 0
+
     @api.depends('room_id')
     def _compute_room_price(self):
         for rec in self:
@@ -92,21 +107,6 @@ class HostelBooking(models.Model):
     def _compute_total_bed_amount(self):
         for rec in self:
             rec.total_bed_amount = rec.room_price * rec.booking_days
-
-    @api.depends('start_date', 'end_date')
-    def _compute_booking_days(self):
-        for rec in self:
-            if rec.start_date and rec.end_date:
-                rec.booking_days = (rec.end_date - rec.start_date).days
-            else:
-                rec.booking_days = 0
-
-    @api.depends('visitor_id', 'start_date', 'end_date')
-    def _compute_display_name(self):
-        for rec in self:
-            rec.display_name = (f"{rec.visitor_id.display_name}:  "
-                                f"{rec.start_date.strftime('%Y-%m-%d')} "
-                                f"- {rec.end_date.strftime('%Y-%m-%d')}")
 
     @api.depends('start_date', 'end_date', 'bed_id', 'service_ids')
     def _compute_total_amount(self):
@@ -146,7 +146,7 @@ class HostelBooking(models.Model):
             self.available_bed_ids = []
 
     @api.constrains('start_date', 'end_date')
-    def check_dates(self):
+    def _check_dates(self):
         """End booking date must be at least one day later the booking start
         date"""
         self.ensure_one()
@@ -156,7 +156,7 @@ class HostelBooking(models.Model):
                     _('Booking end date must be at least one day '
                       'later than booking start date.'))
 
-    def check_is_room_available(self):
+    def _check_is_room_available(self):
         """Check if the selected bed is available."""
         self.ensure_one()
         if self.bed_id.id not in self.available_bed_ids:
@@ -168,11 +168,11 @@ class HostelBooking(models.Model):
         """Check if the selected bed is available."""
         records = super(HostelBooking, self).create(vals)
         for record in records:
-            record.check_is_room_available()
+            record._check_is_room_available()
         return records
 
     def write(self, vals):
         """Check if the selected bed is available."""
         res = super(HostelBooking, self).write(vals)
-        self.check_is_room_available()
+        self._check_is_room_available()
         return res
