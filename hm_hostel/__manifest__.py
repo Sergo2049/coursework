@@ -3,11 +3,11 @@
     'version': '17.0.1.0.0',
     'license': 'AGPL-3',
     'author': 'Serhii Vydysh',
-    'depends': ['base', 'contacts', 'mail',
+    'depends': ['base',
                 ],
     'data': [
         'security/hostel_groups.xml',
-        'security/ir.model.access.csv',
+        # 'security/ir.model.access.csv',
         'views/hostel_menu.xml',
         'views/hostel_service_type.xml',
         'views/hostel_service.xml',

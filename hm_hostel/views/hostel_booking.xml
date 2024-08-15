@@ -63,11 +63,6 @@
                         </page>
                     </notebook>
                 </sheet>
-                <div class="oe_chatter">
-                    <field name="message_follower_ids"/>
-                    <field name="activity_ids"/>
-                    <field name="message_ids"/>
-                </div>
             </form>
         </field>
     </record>
@@ -108,7 +103,6 @@
                 <field name="room_id" optional="show"/>
                 <field name="bed_id"/>
                 <field name="is_paid"/>
-                <field name="activity_ids" widget="list_activity"/>
             </tree>
         </field>
     </record>
@@ -120,7 +114,6 @@
             <calendar date_start="start_date" date_stop="end_date"
                       color="bed_id" scales="month"
                       create="False" delete="False">
-                <!-- TODO -->
                 <field name="start_date"/>
                 <field name="end_date"/>
                 <field name="booking_days"/>
