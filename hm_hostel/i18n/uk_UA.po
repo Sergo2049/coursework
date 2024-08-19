@@ -1,0 +1,768 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* hm_hostel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-08-19 20:13+0000\n"
+"PO-Revision-Date: 2024-08-19 23:22+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: uk_UA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 3.0.1\n"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Bed :</span>"
+msgstr "<span class=\"fw-bold\">Ліжко :</span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Bed price :</span>"
+msgstr "<span class=\"fw-bold\">Ціна ліжка :</span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Bed total amount :</span>"
+msgstr "<span class=\"fw-bold\">Вартість ліжка :</span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_kanban_view
+msgid "<span class=\"fw-bold\">Bed: </span>"
+msgstr "<strong>Ліжко: </strong>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Booking TOTAL: </span>"
+msgstr "<span class=\"fw-bold\">ВАРТІСТЬ бронювання:</span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Booking: #</span>"
+msgstr "<span class=\"fw-bold\">Бронювання: #</span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_kanban_view
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Dates: </span>"
+msgstr "<span class=\"fw-bold\">Дати: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_kanban_view
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Days: </span>"
+msgstr "<span class=\"fw-bold\">Днів: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Gender: </span>"
+msgstr "<span class=\"fw-bold\">Стать: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Phone: </span>"
+msgstr "Phone:<span class=\"fw-bold\">Телефон: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Report date: </span>"
+msgstr "<span class=\"fw-bold\">Дата звіту: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Room :</span>"
+msgstr "<span class=\"fw-bold\">Кімната :</span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_kanban_view
+msgid "<span class=\"fw-bold\">Room: </span>"
+msgstr "<span class=\"fw-bold\">Кімната: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Total: </span>"
+msgstr "<span class=\"fw-bold\">Всього: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Total:</span>"
+msgstr "<span class=\"fw-bold\">Всього: </span>"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_kanban_view
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "<span class=\"fw-bold\">Visitor: </span>"
+msgstr "<span class=\"fw-bold\">Відівідувач: </span>"
+
+#. module: hm_hostel
+#. odoo-python
+#: code:addons/hm_hostel/models/res_partner.py:0
+#, python-format
+msgid "A visitor with the specified number already exists"
+msgstr "Відвідувач зі вказаним номером вже існує"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__active
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__active
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__active
+msgid "Active"
+msgstr "Активність"
+
+#. module: hm_hostel
+#: model:res.groups,comment:hm_hostel.group_hostel_manager
+msgid "Administrators of the Hostel (full rights)"
+msgstr "Адміністратор Хостелу (повні права)"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__amount
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "Amount"
+msgstr "Сумма"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_form_view
+msgid "Archived"
+msgstr "Архівований"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_form_view
+msgid "Author"
+msgstr "Автор"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__available_bed_ids
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__available_bed_ids
+msgid "Available Bed"
+msgstr "Доступне ліжко"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "BOOKING INFO"
+msgstr "ІНФОРМАЦІЯ З БРОНЮВАННЯ"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.hostel_bed_act_window
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__bed_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__name
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__bed_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__bed_ids
+#: model:ir.ui.menu,name:hm_hostel.hostel_bed_menu
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_bed_tree_view
+#, fuzzy
+msgid "Bed"
+msgstr "Ліжко"
+
+#. module: hm_hostel
+#: model:hostel.bed,name:hm_hostel.hostel_bed_1
+#: model:hostel.bed,name:hm_hostel.hostel_bed_11
+#: model:hostel.bed,name:hm_hostel.hostel_bed_15
+#: model:hostel.bed,name:hm_hostel.hostel_bed_7
+msgid "Bed 1"
+msgstr "Ліжко 1"
+
+#. module: hm_hostel
+#: model:hostel.bed,name:hm_hostel.hostel_bed_12
+#: model:hostel.bed,name:hm_hostel.hostel_bed_2
+#: model:hostel.bed,name:hm_hostel.hostel_bed_8
+msgid "Bed 2"
+msgstr "Ліжко 2"
+
+#. module: hm_hostel
+#: model:hostel.bed,name:hm_hostel.hostel_bed_13
+#: model:hostel.bed,name:hm_hostel.hostel_bed_3
+#: model:hostel.bed,name:hm_hostel.hostel_bed_9
+msgid "Bed 3"
+msgstr "Ліжко 3"
+
+#. module: hm_hostel
+#: model:hostel.bed,name:hm_hostel.hostel_bed_10
+#: model:hostel.bed,name:hm_hostel.hostel_bed_14
+#: model:hostel.bed,name:hm_hostel.hostel_bed_4
+msgid "Bed 4"
+msgstr "Ліжко 4"
+
+#. module: hm_hostel
+#: model:hostel.bed,name:hm_hostel.hostel_bed_5
+msgid "Bed 5"
+msgstr "Ліжко 5"
+
+#. module: hm_hostel
+#: model:hostel.bed,name:hm_hostel.hostel_bed_6
+msgid "Bed 6"
+msgstr "Ліжко 6"
+
+#. module: hm_hostel
+#: model:ir.model.fields,help:hm_hostel.field_hostel_bed__name
+msgid "Bed number"
+msgstr "Номер ліжка"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_res_users__birth_date
+msgid "Birth Date"
+msgstr "Дата народження"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__booking_ids
+msgid "Bokings"
+msgstr "Бронювання"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_tree_view
+msgid "Book a bed"
+msgstr "Бронювати ліжко"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.hostel_booking_act_window
+#: model:ir.actions.report,name:hm_hostel.action_report_booking
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__display_name
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__booking_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__booking_id
+#: model:ir.model.fields,field_description:hm_hostel.field_res_partner__booking_ids
+#: model:ir.model.fields,field_description:hm_hostel.field_res_users__booking_ids
+#: model:ir.ui.menu,name:hm_hostel.hostel_booking_menu
+msgid "Booking"
+msgstr "Бронювання"
+
+#. module: hm_hostel
+#. odoo-python
+#: code:addons/hm_hostel/models/hostel_booking.py:0
+#, python-format
+msgid "Booking end date must be at least one day later than booking start date."
+msgstr "Дата завершення бронювання має бути щонайменше на 1 день більше, ніж дата початку."
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_res_partner_form_view
+msgid "Bookings"
+msgstr "Бронювання"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_2
+msgid "Breakfast"
+msgstr "Сніданок"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.create_booking_wizard_view_form
+msgid "Cancel"
+msgstr "Відміна"
+
+#. module: hm_hostel
+#. odoo-python
+#: code:addons/hm_hostel/models/hostel_booking.py:0
+#: model:ir.model.fields.selection,name:hm_hostel.selection__hostel_booking__state__canceled
+#, python-format
+msgid "Canceled"
+msgstr "Відмінено"
+
+#. module: hm_hostel
+#: model:ir.model.fields.selection,name:hm_hostel.selection__hostel_payment__type__cash
+msgid "Cash"
+msgstr "Готівка"
+
+#. module: hm_hostel
+#. odoo-python
+#: code:addons/hm_hostel/models/hostel_booking.py:0
+#: model:ir.model.fields.selection,name:hm_hostel.selection__hostel_booking__state__confirmed
+#, python-format
+msgid "Confirmed"
+msgstr "Підтверджено"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_res_partner
+msgid "Contact"
+msgstr "Контакт"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_create_booking_wizard
+msgid "Create Booking Wizard"
+msgstr "Майстер створення бронювання"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.action_create_booking_wizard
+#: model_terms:ir.ui.view,arch_db:hm_hostel.create_booking_wizard_view_form
+msgid "Create booking"
+msgstr "Створити бронювання"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__create_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__create_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__create_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__create_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__create_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__create_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__create_uid
+msgid "Created by"
+msgstr "Автор"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__create_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__create_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__create_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__create_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__create_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__create_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__create_date
+msgid "Created on"
+msgstr "Дата створення"
+
+#. module: hm_hostel
+#: model:ir.model.fields.selection,name:hm_hostel.selection__hostel_payment__type__credit_card
+msgid "Credit card"
+msgstr "Картка"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__currency_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__currency_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__currency_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__currency_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__currency_id
+msgid "Currency"
+msgstr "Валюта"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_form_view
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_service_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "Date"
+msgstr "Дата"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__booking_days
+msgid "Days"
+msgstr "Днів"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__display_name
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__display_name
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__display_name
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__display_name
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__display_name
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__display_name
+msgid "Display Name"
+msgstr "Ім'я відображення"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__end_date
+msgid "End Date"
+msgstr "Дата завершення"
+
+#. module: hm_hostel
+#: model:ir.model.fields.selection,name:hm_hostel.selection__res_partner__gender__female
+msgid "Female"
+msgstr "Жіночий"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_search_view
+msgid "From last month"
+msgstr "Автор Останнього Оновлення"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_res_partner__gender
+#: model:ir.model.fields,field_description:hm_hostel.field_res_users__gender
+msgid "Gender"
+msgstr "Стать"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_4
+msgid "Gym"
+msgstr "Спортзал"
+
+#. module: hm_hostel
+#: model:ir.module.category,name:hm_hostel.category_hostel
+#: model:ir.ui.menu,name:hm_hostel.hostel_root_menu
+msgid "Hostel"
+msgstr "Хостел"
+
+#. module: hm_hostel
+#: model:res.groups,name:hm_hostel.group_hostel_manager
+msgid "Hostel Administrator"
+msgstr "Адміністратор Хостелу"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_hostel_bed
+msgid "Hostel Bed"
+msgstr "Ліжко Хостелу"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_hostel_payment
+msgid "Hostel Payment"
+msgstr "Платежі Хостелу"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_hostel_room
+msgid "Hostel Room"
+msgstr "Кімната Хостелу"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_hostel_service
+msgid "Hostel Service"
+msgstr "Послуга Хостелу"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_hostel_service_type
+msgid "Hostel Service Type"
+msgstr "Тип Послуги Хостелу"
+
+#. module: hm_hostel
+#: model:res.groups,name:hm_hostel.group_hostel_user
+msgid "Hostel User"
+msgstr "Користувач Хостелу"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_hostel_booking
+msgid "Hostel booking"
+msgstr "Бронювання хостелу"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__id
+msgid "ID"
+msgstr "ІД"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__is_available
+msgid "Is Available"
+msgstr "Доступно"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__write_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__write_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__write_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__write_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__write_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__write_uid
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__write_uid
+msgid "Last Updated by"
+msgstr "Автор Останнього Оновлення"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__write_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__write_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__write_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__write_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__write_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__write_date
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__write_date
+msgid "Last Updated on"
+msgstr "Дата Останнього Оновлення"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_1
+msgid "Laundry"
+msgstr "Прання"
+
+#. module: hm_hostel
+#: model:ir.model.fields.selection,name:hm_hostel.selection__res_partner__gender__male
+msgid "Male"
+msgstr "Чоловічий"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_6
+msgid "Massage"
+msgstr "Масаж"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__name
+msgid "Name"
+msgstr "Ім'я"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_search_view
+msgid "Not canceled"
+msgstr "Не відмінені"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "PAYMENTS"
+msgstr "ПЛАТЕЖІ"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__is_paid
+msgid "Paid"
+msgstr "Сплачено"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_9
+msgid "Parking"
+msgstr "Парковка"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_res_partner__passport_data
+#: model:ir.model.fields,field_description:hm_hostel.field_res_users__passport_data
+msgid "Passport data"
+msgstr "Паспортні дані"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.hostel_payment_act_window
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__payment_ids
+#: model:ir.ui.menu,name:hm_hostel.hostel_payment_menu
+msgid "Payment"
+msgstr "Платіж"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__payment_total_amount
+msgid "Payment total"
+msgstr "Всього сплачено"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_form_view
+msgid "Payments"
+msgstr "Платежі"
+
+#. module: hm_hostel
+#. odoo-python
+#: code:addons/hm_hostel/models/hostel_booking.py:0
+#: model:ir.model.fields.selection,name:hm_hostel.selection__hostel_booking__state__planned
+#, python-format
+msgid "Planned"
+msgstr "Запланований"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__planned_end_date
+msgid "Planned End Date"
+msgstr "Планова дата завершення"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__planned_start_date
+msgid "Planned Start Date"
+msgstr "Планова дата початку"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__price
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__price
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service_type__price
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "Price"
+msgstr "Ціна"
+
+#. module: hm_hostel
+#: model:ir.model.fields.selection,name:hm_hostel.selection__hostel_room__type__private
+msgid "Private"
+msgstr "Окремий"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__quantity
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "Quantity"
+msgstr "Кількість"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.hostel_room_act_window
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__room_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_bed__room_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__room_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__name
+#: model:ir.ui.menu,name:hm_hostel.hostel_room_menu
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_bed_search_view
+msgid "Room"
+msgstr "Кімната"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_1
+msgid "Room 101"
+msgstr "Кімната 101"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_2
+msgid "Room 102"
+msgstr "Кімната 102"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_3
+msgid "Room 103"
+msgstr "Кімната 103"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_4
+msgid "Room 104"
+msgstr "Кімната 104"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_5
+msgid "Room 105"
+msgstr "Кімната 105"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_6
+msgid "Room 106"
+msgstr "Кімната 106"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_7
+msgid "Room 107"
+msgstr "Кімната 107"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_8
+msgid "Room 108"
+msgstr "Кімната 108"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_9
+msgid "Room 109"
+msgstr "Кімната 109"
+
+#. module: hm_hostel
+#: model:hostel.room,name:hm_hostel.hostel_room_10
+msgid "Room 110"
+msgstr "Кімната 110"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__room_price
+msgid "Room Price"
+msgstr "Ціна Кімнати"
+
+#. module: hm_hostel
+#: model:ir.model.fields,help:hm_hostel.field_hostel_room__name
+msgid "Room number"
+msgstr "Номер кімнати"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "SERVICES"
+msgstr "ПОСЛУГИ"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_8
+msgid "Sauna"
+msgstr "Сауна"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.hostel_service_act_window
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__service_ids
+#: model:ir.ui.menu,name:hm_hostel.hostel_service_menu
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_form_view
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_service_tree_view
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "Service"
+msgstr "Послуга"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.hostel_service_type_act_window
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__service_type_id
+#: model:ir.ui.menu,name:hm_hostel.hostel_service_type_menu
+msgid "Service Type"
+msgstr "Вид Послуги"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__service_total_amount
+msgid "Service total"
+msgstr "Сумма послуг"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.hostel_booking_form_view
+msgid "Services"
+msgstr "Послуги"
+
+#. module: hm_hostel
+#: model:ir.model.fields.selection,name:hm_hostel.selection__hostel_room__type__shared
+msgid "Shared"
+msgstr "Спільний"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_5
+msgid "Spa"
+msgstr "СПА"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__start_date
+msgid "Start Date"
+msgstr "Дата початку"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__state
+msgid "State"
+msgstr "Стан"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_7
+msgid "Swimming Pool"
+msgstr "Басейн"
+
+#. module: hm_hostel
+#. odoo-python
+#: code:addons/hm_hostel/models/hostel_booking.py:0
+#, python-format
+msgid "The selected bed is not available for the specified dates."
+msgstr "Обране ліжко недосупне на вказані дати."
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__total_amount
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_service__total_amount
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "Total"
+msgstr "Вартість"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__total_bed_amount
+msgid "Total Bed Amount"
+msgstr "Вартість ліжка всього"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_3
+msgid "Tour"
+msgstr "Тур"
+
+#. module: hm_hostel
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_payment__type
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_room__type
+msgid "Type"
+msgstr "Вид"
+
+#. module: hm_hostel
+#: model:ir.model,name:hm_hostel.model_res_users
+msgid "User"
+msgstr "Права доступу Хостелу"
+
+#. module: hm_hostel
+#: model:ir.module.category,description:hm_hostel.category_hostel
+msgid "User access levels for the Hostel"
+msgstr "Права доступу Хостелу"
+
+#. module: hm_hostel
+#: model:res.groups,comment:hm_hostel.group_hostel_user
+msgid "Users of the Hostel"
+msgstr "Користувачі Хостелу"
+
+#. module: hm_hostel
+#: model_terms:ir.ui.view,arch_db:hm_hostel.report_booking
+msgid "VISITOR INFO"
+msgstr "ІНФОРМАЦІЯ ПРО ВІДВІДУВАЧА"
+
+#. module: hm_hostel
+#: model:ir.actions.act_window,name:hm_hostel.hostel_res_partner_act_window
+#: model:ir.model.fields,field_description:hm_hostel.field_create_booking_wizard__visitor_id
+#: model:ir.model.fields,field_description:hm_hostel.field_hostel_booking__visitor_id
+#: model:ir.ui.menu,name:hm_hostel.hostel_res_partner_menu
+msgid "Visitor"
+msgstr "Відвідувач"
+
+#. module: hm_hostel
+#: model:hostel.service.type,name:hm_hostel.hostel_service_type_10
+msgid "Yoga Class"
+msgstr "Йога"
+
+#. module: hm_hostel
+#: model:ir.model.fields,help:hm_hostel.field_hostel_payment__amount
+#: model:ir.model.fields,help:hm_hostel.field_hostel_room__price
+#: model:ir.model.fields,help:hm_hostel.field_hostel_service__price
+#: model:ir.model.fields,help:hm_hostel.field_hostel_service_type__price
+msgid ""
+"You can change currency in your company\n"
+"                                  settings."
+msgstr "Ви можете зімнити валюту в налаштуваннях вашої команії"
+
+#. module: hm_hostel
+#: model:ir.actions.report,print_report_name:hm_hostel.action_report_booking
+msgid "object.name"
+msgstr ""
