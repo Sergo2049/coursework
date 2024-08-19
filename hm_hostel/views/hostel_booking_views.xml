@@ -46,8 +46,15 @@
                                         <field name="total_amount"/>
                                     </tree>
                                 </field>
-                                <field name="service_total_amount"/>
                             </group>
+                            <div class="container">
+                                <div class="row justify-content-end">
+                                    <div class="col-8">Service total:</div>
+                                    <div class="col-4">
+                                        <field name="service_total_amount"/>
+                                    </div>
+                                </div>
+                            </div>
                         </page>
                         <page string="Payments">
                             <group>
@@ -59,8 +66,16 @@
                                         <field name="currency_id"/>
                                     </tree>
                                 </field>
-                                <field name="payment_total_amount"/>
+
                             </group>
+                            <div class="container">
+                                <div class="row justify-content-end">
+                                    <div class="col-8">Payment total:</div>
+                                    <div class="col-4">
+                                        <field name="payment_total_amount"/>
+                                    </div>
+                                </div>
+                            </div>
                         </page>
                     </notebook>
                 </sheet>
