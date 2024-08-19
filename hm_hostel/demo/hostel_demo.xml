@@ -452,47 +452,48 @@
         <field name="amount">250.0</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
-    <record id="hostel_payment_5" model="hostel.payment">
+    <record id="hostel_payment_5_1" model="hostel.payment">
         <field name="type">credit_card</field>
         <field name="booking_id" ref="hostel_booking_5"/>
-        <field name="amount">350.0</field>
+        <field name="amount">80.0</field>
+        <field name="currency_id" ref="base.USD"/>
+    </record>
+    <record id="hostel_payment_5_2" model="hostel.payment">
+        <field name="type">credit_card</field>
+        <field name="booking_id" ref="hostel_booking_5"/>
+        <field name="amount">50.0</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_payment_7" model="hostel.payment">
         <field name="type">credit_card</field>
         <field name="booking_id" ref="hostel_booking_7"/>
-        <field name="amount">400.0</field>
+        <field name="amount">170.0</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
     <record id="hostel_payment_8" model="hostel.payment">
         <field name="type">credit_card</field>
         <field name="booking_id" ref="hostel_booking_8"/>
-        <field name="amount">450.0</field>
+        <field name="amount">170.0</field>
         <field name="currency_id" ref="base.USD"/>
     </record>
-    <record id="hostel_payment_10" model="hostel.payment">
-        <field name="type">credit_card</field>
-        <field name="booking_id" ref="hostel_booking_10"/>
-        <field name="amount">500.0</field>
-        <field name="currency_id" ref="base.USD"/>
+
+<!--     hostel demo users-->
+<!--     Administrator-->
+    <record id="hostel_user_manager" model="res.users">
+        <field name="name">Hostel Manager</field>
+        <field name="login">hsotelmanager</field>
+        <field name="password">123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_manager')])]"/>
+<!--        <context>{'no_reset_password': True}</context>-->
     </record>
-    <!-- hostel demo users-->
-    <!-- Administrator -->
-<!--    <record id="hostel_user_manager" model="res.users">-->
-<!--        <field name="name">Hostel Manager</field>-->
-<!--        <field name="login">hsotelmanager</field>-->
-<!--        <field name="password">123</field>-->
-<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_manager')])]"/>-->
+    <!-- User -->
+    <record id="hostel_user_user" model="res.users">
+        <field name="name">Hostel User</field>
+        <field name="login">hosteluser</field>
+        <field name="password">123</field>
+        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_user')])]"/>
 <!--        <context>{'no_reset_password': True}</context>-->
-<!--    </record>-->
-<!--    &lt;!&ndash; User &ndash;&gt;-->
-<!--    <record id="hostel_user_user" model="res.users">-->
-<!--        <field name="name">Hostel User</field>-->
-<!--        <field name="login">hosteluser</field>-->
-<!--        <field name="password">123</field>-->
-<!--        <field name="groups_id" eval="[(6, 0, [ref('base.group_user'), ref('hm_hostel.group_hostel_user')])]"/>-->
-<!--        <context>{'no_reset_password': True}</context>-->
-<!--    </record>-->
+    </record>
 
 </odoo>
 

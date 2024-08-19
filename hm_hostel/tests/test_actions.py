@@ -46,14 +46,12 @@ class TestActions(TestCommon):
     def test_phone_number_unique(self):
         """Visitirs phone number must be unique"""
         with self.assertRaises(ValidationError):
-            self.env['hostel.visitor'].create({
-                'first_name': 'Ivan',
-                'last_name': 'Ivanov',
+            self.env['res.partner'].create({
+                'name': 'Ivan',
                 'phone': '+3809998887766',
                 'gender': 'male'})
 
-            self.env['hostel.visitor'].create({
-                'first_name': 'Inna',
-                'last_name': 'Makariv',
+            self.env['res.partner'].create({
+                'name': 'Inna',
                 'phone': '+3809998887766',
                 'gender': 'female'})

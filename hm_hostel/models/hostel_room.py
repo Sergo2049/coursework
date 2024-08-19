@@ -30,8 +30,3 @@ class HostelRoom(models.Model):
     bed_ids = fields.One2many(comodel_name='hostel.bed',
                               inverse_name='room_id',
                               readonly=True)
-
-    def action_book(self):
-        return
-
-    # TODO: state

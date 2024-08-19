@@ -30,10 +30,9 @@ class TestCommon(TransactionCase):
                           (4, self.group_hostel_manager.id)]
         })
         self.currency = self.env.company.currency_id.id
-        self.visitor_test = self.env['hostel.visitor'].create({
-            'first_name': 'Ivan',
-            'last_name': 'Ivanov',
-            'phone': '+380945678899',
+        self.visitor_test = self.env['res.partner'].create({
+            'name': 'Ivan',
+            'mobile': '+380945678899',
             'gender': 'male'
         })
         self.room_test = self.env['hostel.room'].create({
