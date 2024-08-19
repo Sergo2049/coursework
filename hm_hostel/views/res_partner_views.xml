@@ -6,14 +6,20 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="priority">200</field>
         <field name="arch" type="xml">
-<!--            <xpath expr="//field[@name='function']" position="replace"/>-->
-<!--            <xpath expr="//field[@name='phone']" position="replace"/>-->
-<!--            <xpath expr="//field[@name='title']" position="replace"/>-->
-<!--            <xpath expr="//field[@name='website']" position="replace"/>-->
-<!--            <xpath expr="//page[@name='contact_addresses']" position="replace"/>-->
-<!--            <xpath expr="//field[@name='mobile']" position="after">-->
-<!--                <field name="passport_data"/>-->
-<!--            </xpath>-->
+            <xpath expr="//field[@name='function']" position="replace"/>
+            <xpath expr="//field[@name='phone']" position="replace"/>
+            <xpath expr="//field[@name='title']" position="replace"/>
+            <xpath expr="//field[@name='website']" position="replace"/>
+            <xpath expr="//field[@name='category_id']" position="replace"/>
+            <xpath expr="//page[@name='contact_addresses']" position="replace"/>
+<!--            <xpath expr="//page[@name='sales_purchases']" position="replace"/>-->
+            <xpath expr="//field[@name='mobile']" position="after">
+                <field name="passport_data"/>
+            </xpath>
+            <xpath expr="//field[@name='passport_data']" position="after">
+                <field name="gender"/>
+            </xpath>
+
             <xpath expr="//page[@name='sales_purchases']" position="before">
                 <page name="bookings" string="Bookings">
                     <field name="booking_ids"/>
@@ -22,19 +28,19 @@
         </field>
     </record>
 
-<!--    <record model="ir.actions.act_window" id="hostel_res_partner_act_window">-->
-<!--        <field name="name">Visitor</field>-->
-<!--        <field name="res_model">res.partner</field>-->
-<!--        <field name="view_mode">tree,form</field>-->
-<!--        <field name="domain">[]</field>-->
-<!--        <field name="context">{}</field>-->
-<!--    </record>-->
+    <record model="ir.actions.act_window" id="hostel_res_partner_act_window">
+        <field name="name">Visitor</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[]</field>
+        <field name="context">{}</field>
+    </record>
 
-<!--    <record model="ir.ui.menu" id="res_partner_menu">-->
-<!--        <field name="name">Visitor</field>-->
-<!--        <field name="parent_id" ref="hostel_root_menu"/>-->
-<!--        <field name="action" ref="res_partner_act_window"/>-->
-<!--        <field name="sequence" eval="20"/>-->
-<!--    </record>-->
+    <record model="ir.ui.menu" id="hostel_res_partner_menu">
+        <field name="name">Visitor</field>
+        <field name="parent_id" ref="hostel_root_menu"/>
+        <field name="action" ref="hostel_res_partner_act_window"/>
+        <field name="sequence" eval="20"/>
+    </record>
 
 </odoo>
