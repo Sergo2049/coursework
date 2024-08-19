@@ -1,6 +1,4 @@
-from dateutil import relativedelta
-from datetime import date
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class ResUser(models.Model):
