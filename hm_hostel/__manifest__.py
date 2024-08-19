@@ -13,6 +13,7 @@
         'views/hostel_service_views.xml',
         'views/hostel_bed_views.xml',
         'views/res_partner_views.xml',
+        'views/res_user_views.xml',
         'views/hostel_room_views.xml',
         'views/hostel_payment_views.xml',
         'wizard/create_booking_wizard_views.xml',
