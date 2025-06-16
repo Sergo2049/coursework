@@ -1,9 +1,9 @@
 {
-    'name': 'Hostel management',
+    'name': 'Hostel management oh yes',
     'version': '17.0.1.0.0',
     'license': 'AGPL-3',
     'author': 'Serhii Vydysh',
-    'depends': ['base',
+    'depends': ['base', 'mail',
                 ],
     'data': [
         'security/hostel_groups.xml',
